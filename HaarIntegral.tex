@@ -1,0 +1,279 @@
+\documentclass[13pt]{amsart}
+\usepackage{background}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.37in]{geometry}
+\usepackage{verbatim, graphicx, amsmath, mathtools,  enumerate, hyperref, tcolorbox, sourcecodepro}
+
+\definecolor{Red}{cmyk}{0.1, 0.70, 0.65, 0.00, 1.00}
+\definecolor{Blue}{cmyk}{0.70, 0.08, 0.08, 0.04, 1.00}
+\definecolor{Yellow}{cmyk}{0.0, 0.00, 0.7, 0.00, 0.5}
+\definecolor{Green}{cmyk}{0.6, 0.0, 0.6, 0.00, 1.00}
+\definecolor{Purple}{cmyk}{0.8, 0.3, 0.3, 0.00, 1.00}
+\definecolor{Orange}{cmyk}{0.0, 0.3, 0.7, 0.00, 1.00}
+
+
+%GET THIS SO IT TAKES IN A COLOR OF THE USER'S CHOOSING.
+%GET THIS SO IT TAKES IN PYTHON OUTPUT
+%GET THIS SO IT TAKES IN C OUTPUT
+
+%Lean code command
+\newcounter{leancounter}
+\setcounter{leancounter}{1} 
+\newenvironment{lean}[1]{\begin{center}
+{\begin{tcolorbox}[width=4.5in,colback={white},title={\begin{center}\texttt{Lean \theleancounter} \addtocounter{leancounter}{1}  \end{center}},colbacktitle=Blue,coltitle=black]  
+\ \\   
+{\texttt{#1}}
+\ \\ 
+\end{tcolorbox}  }
+\end{center}}
+
+%Lean print command
+\newcounter{leancount}
+\setcounter{leancount}{1}
+\newcommand{\print}[1]{\verbatiminput{\theleancount.txt} \setcounter{leancount}{\theleancount+1} }
+
+%Python code command
+\newcounter{pythoncounter}
+\setcounter{pythoncounter}{1} 
+\newenvironment{python}[1]{\begin{center}
+{\begin{tcolorbox}[width=4.5in,colback={white},title={\begin{center}\texttt{Python \thepythoncounter} \addtocounter{pythoncounter}{1}  \end{center}},colbacktitle=Red,coltitle=black]  
+\ \\
+{\texttt{#1}}
+\ \\ 
+\end{tcolorbox}  }
+\end{center}}
+
+%Lean print command
+\newcounter{pythoncount}
+\setcounter{pythoncount}{1}
+\newcommand{\prynt}[1]{  {\verbatiminput{PY\thepythoncount.txt   }} \setcounter{pythoncount}{\thepythoncount+1} }
+
+%Make cover
+\newcommand{\cover}[1]{
+\begin{center}
+\ \\ \ \\ \ \\
+\ \\ \ \\ \ \\
+\ \\ \ \\ \ \\
+\scalebox{5}{$\mathsf{#1}$} 
+\ \\ \ \\ \ \\
+\ \\ \ \\ \ \\
+$\mathsf{E.\ Dean\ Young}$
+\thispagestyle{empty}
+\end{center}
+\newpage
+}
+\usepackage{fancyhdr}
+
+\title{Constructing Haar Integral using Insights into Profinite Constructions}
+\author{E. Dean Young}
+\begin{document}
+
+Filtered cofiltered category C produces a simplicial set (in fact, quasicategory).
+
+
+A particular filtered cofiltered category of interest is [ℕ,Boolˣ], on which we put an internal equivalence relation
+
+Consider the following condition:
+
+\begin{enumerate}
+\item The only internal categories that were used were both "filtered" and "cofiltered"
+\end{enumerate}
+
+
+
+
+
+ which is directed-contractible
+
+E⃗(≤_([ℕ,Boolˣ]), [ℕ,Boolˣ]) ⭢ E [(ℕ,ℤ/2ℤ), *]
+
+E (⊕ₙ ℤ/2ℤ)
+
+\begin{enumerate}
+\item Internal relations can often be viewed as particular internal groupoids G in which there is a condition on the map G.obj ⭢ G.obj × G.obj resembling injectivity. 
+\item 
+\end{enumerate}
+
+
+In this passage I detail a construction of Haar measure and \href{https://mathoverflow.net/questions/351091/existence-and-uniqueness-of-haar-measure-on-compacta-a-cohomological-approach}{Haar integral} on compact Hausdorff topological groups using insights into profinite limits. The main structure that we will use in the proof is called an ``internal equivalence relation", which is a particular kind of internal groupoid. While it makes use of categories, functors, and natural isomorphisms, this is not totally essential to the ideas at hand, and so we try to preserve a more elementary proof using the characterization of profinite sets as compact hausdorff totally disconnected topological spaces. There are two main ideas, each of which can be expressed in ordinary point-set topological spaces:
+
+\begin{enumerate}[(a)]
+\item All compact hausdorff topological spaces are quotients of a profinite set by a closed equivalence relation.
+\item There is a Haar measure and Haar integral for profinite groups.
+\item $\texttt{(X,R) ≅ CH}$
+\item 
+\item 
+\end{enumerate}
+
+I cannot find a source for (A) in the above, but I hope to find it documented somewhere. It forms the main part of the proof. (B) in the above is well known, and so I do not prove it. I learned it first from Peter Scholze's $\textit{Lectures on Condensed Mathematics}$ on page 17, where it forms a key insight into the generality of his constructions using profinite sets. I suspect that (B) can be shown using insights into ultrafilter convergence (existence and uniqueness) and how it relates to compact-hausdorff spaces.\\
+
+A good reference for some background on profinite sets is Peter Johnstone's \href{https://books.google.com/books?id=CiWwoLNbpykC&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false}{$\textit{Stone Spaces}$}, specifically chapter IV (starting on page 224).\\
+
+Even though I use categories here, the usage is fairly light. The hardest categorical concept in the proof is the pro-category of a category, formed by \href{https://mathoverflow.net/questions/16917/what-is-a-reference-for-profinite-sets/16929#16929}{freely-formally-adding in Pro limits}. While this concept is towards the core of the proof, we take care to mention and link to the point-set topological characterization of $\texttt{Pro FinSet}$ as compact hausdorff totally disconnected topological spaces.\\
+
+\begin{enumerate}[(A)]
+\item Group objects in the category of compact Hausdorff totally disonnected spaces endowed with $\texttt{closed}$ equivalence relations are profinite limits of...in internal equivalence relations in finite sets (equivalently, finite discrete topological spaces)
+\item All compact hausdorff topological spaces are quotients of a profinite set by a closed equivalence relation.
+\end{enumerate}
+
+Other than this we mainly make make use of basic categorical structures like these:
+
+\iffalse
+%LEAN: 
+\begin{center}
+\begin{tcolorbox}[width=5in,colback={white},title={\begin{center}\texttt{Note} \addtocounter{lcounter}{1}  \end{center}},colbacktitle=Blue,coltitle=black]
+\begin{minted}[breaklines, escapeinside=||]{lean}
+
+variable {X : Type}
+variable {Y : Type}
+variable {C : Category X}
+variable {D : Category Y}
+variable {F : Functor C D}
+variable {G : Functor C D}
+variable {η : NaturalTransform F G}
+
+-- definition of fully faithful functor
+-- definition of an essential surjection
+-- NatExt is an extensionality result for natural transformations
+
+\end{minted}
+\end{tcolorbox}
+\end{center}
+\fi
+
+My goal is to put this demonstration of the existence of Haar integral in Lean 4.\\
+
+
+Pro
+
+\section{(a)}
+
+I would like to start with some potentially familiar definitions and concepts:
+
+\begin{enumerate}[(i)]
+\item Definition of a category
+\item FinSet
+\begin{enumerate}
+\item The category FinSet of finite sets 
+\end{enumerate}
+\item Pro : Cat → Cat (See Johnstone)
+\item Top \iffalse
+\item Definition of compact
+\item Definition of Hausdorff
+\item Definition of a cofiltered diagram
+\item Definition of a cofiltered limit on objects
+ \item Definition the category Pro C for a category C
+\item The product of profinite sets is profinite and satisfies the universal property of product in profinite sets.
+\item Definition of a $\texttt{Pro FinSet}$
+\item Definition of a $\texttt{CH}$ the category of compact hausdorff topological spaces, a fully faithful subcategory of topological spaces  \fi
+\item Definition of the category of profinite topological spaces
+\item Definition of a closed equivalence relation on a profinite set
+\item The discrete topological space of a topological space (${}^{dis}$)
+\item The Stone-Čech compactification of a topological space (${}^{cmp}$)
+\end{enumerate}
+
+{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $Y $x ${}_{X} Y$ forms the morphism component of an internal equivalence relation.\\
+
+{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $X$ forms the quotient coeq ($\pi_1$, $\pi_2$), where $\pi_1, \pi_2 : Y \times_{X} Y \rightarrow Y$ are the projection maps.\\
+
+See \href{}{Condensed Mathematics} page 17.\\
+
+
+\section{(b) Haar Integral on Profinite Sets}
+
+
+
+\section{Constructing Haar measure and Haar integral on finite sets}
+
+\begin{enumerate}
+\item Definition of an internal groupoid in a category
+\item Definition of an internal functor of internal groupoids in a category
+\item Definition of $\texttt{IntGrpd C}$
+\begin{enumerate}
+\item As a Mathlib structure with 16 components:
+\begin{enumerate}
+\item 
+\end{enumerate}
+\end{enumerate}
+\item Definition of an internal equivalence relation in a category
+\item Definition of an internal equivalence relation map of internal equivalence relations in a category
+\item Definition of $\texttt{IntEqvRel C}$
+\item Definition of $\texttt{ℝ}$ as a topological space
+\item Definition of the Haar integral on an internal groupoid in finite sets
+\item Definition of the Haar measure on an internal groupoid in finite sets
+\item Definition of the Haar integral on an internal equivalence relation in finite sets
+\item Definition of the Haar measure on an internal equivalence relation in finite sets
+\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ Top}$
+\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ CompactHausdorff}$
+\item Definition of the functor $\texttt{(IntEqvRel (Pro FinSet)) ⭢ (Pro (IntEqvRel FinSet))}$
+\item Definition of the functor $\texttt{Grp C ⭢ Grp C}$
+\item Definition of an ultrafilter u : $\texttt{P(Bool) ⭢ Bool}$
+\item "ultrafilter convergence" and compactness
+\item "ultrafilter uniqueness" and the Hausdorff condition
+\item $\texttt{Functor (Grp (Pro (IntEqvRel FinSet))) (Pro (Grp (IntEqvRel FinSet)))}$
+\item Counting measures and counting integrals on $\texttt{Grp (IntEqvRel FinSet)}$
+\item The product of internal equivalence relations in 
+\begin{enumerate}
+\item $\texttt{Grp (IntEqvRel FinSet)}$
+\item $\texttt{IntEqvRel FinSet}$ consists of ordinary equivalence relations in sets
+\end{enumerate}
+\end{enumerate}
+
+
+\section{Constructing the Haar measure and Haar integral for profinite sets}
+
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+\section{Constructing Haar measure and Haar integral for compacta}
+
+Let $E$ be an internal equivalence relation in finite sets. Write $E.Obj$ for its objects and $E.Hom$ for its morphisms. Note that $(Dom,Cod): E.Hom ⭢ E.Obj \times E.Obj$ is an injective function between finite sets. A function φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y) factors through E/$\sim$ is the same as a certain map of internal equivalence relations in which ℝ gets the equality relation. If we write ℝ${}_{=}$ for the internal equivalence relation on ℝ, then we can think of this as a map in $\texttt{IntEqvRel Set}$. We write [E,ℝ${}_{=}$] for the ℝ-vector space whose elements are functions φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y).\\
+
+An internal equivalence functional on a 
+
+
+\begin{enumerate}
+\item https://florisvandoorn.com/papers/haar.pdf
+\item 
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
