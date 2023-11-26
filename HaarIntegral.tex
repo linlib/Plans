@@ -71,20 +71,144 @@ $\mathsf{E.\ Dean\ Young}$
 }
 \usepackage{fancyhdr}
 
-\title{Constructing Haar Integral using Insights into Profinite Constructions}
+\title{Constructing Haar Integral using Insights into Profinite Sets}
 \author{E. Dean Young}
 \begin{document}
 
-A profinite topological space is a compact, hausdorff, totally disconnected topological space.\\
 
-For the purposes of this exposition, a profinite set is an object in the pro category $\texttt{Pro FinSet}$. $\texttt{Pro FinSet}$ is in fact equivalent to ... 
+\section{Introduction}
 
-\begin{enumerate}[(a)]
-\item
-\item Let 
+Fix a universe $\texttt{u₀}$. Recall that a topological space $\texttt{TopologicalSpace u₀ : Type}$ consists of:
+
+\begin{enumerate}
 \item 
 \end{enumerate}
 
+A topological space $\texttt{X : TopologicalSpace u₀}$ is hausdorff if ...\\
+
+
+
+
+A $\texttt{stone\_space : Type}$ is a compact, hausdorff, totally disconnected topological space. 
+
+We can form the category of stone spaces, $\texttt{Stn : Category stone\_space}$, which has $\texttt{stone\_space}$ as its objects. For the purposes of this exposition, a profinite set is an object in $\texttt{Pro.obj FinSet}$. 
+
+There is a categorical equivalence $\texttt{Pro.obj FinSet ≅ Stn}$.
+
+My goal is to put this demonstration of the existence of Haar integral in Lean 4.\\
+
+
+
+\begin{enumerate}
+\item Definition of an internal groupoid in a category
+\item Definition of an internal functor of internal groupoids in a category
+\item Definition of $\texttt{IntGrpd C}$
+\begin{enumerate}
+\item As a Mathlib structure with 16 components:
+\begin{enumerate}
+\item 
+\end{enumerate}
+\end{enumerate}
+\item Definition of an internal equivalence relation in a category
+\item Definition of an internal equivalence relation map of internal equivalence relations in a category
+\end{enumerate}
+
+\begin{enumerate}
+\item Definition of $\texttt{IntEqvRel C}$
+\item Definition of $\texttt{ℝ}$ as a topological space
+\item Definition of the Haar integral on an internal groupoid in finite sets
+\item Definition of the Haar measure on an internal groupoid in finite sets
+\item Definition of the Haar integral on an internal equivalence relation in finite sets
+\item Definition of the Haar measure on an internal equivalence relation in finite sets
+\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ Top}$
+\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ CompactHausdorff}$
+\item Definition of the functor $\texttt{(IntEqvRel (Pro FinSet)) ⭢ (Pro (IntEqvRel FinSet))}$
+\item Definition of the functor $\texttt{Grp C ⭢ Grp C}$
+\item Definition of an ultrafilter u : $\texttt{P(Bool) ⭢ Bool}$
+\item "ultrafilter convergence" and compactness
+\item "ultrafilter uniqueness" and the Hausdorff condition
+\item $\texttt{Functor (Grp (Pro (IntEqvRel FinSet))) (Pro (Grp (IntEqvRel FinSet)))}$
+\item Counting measures and counting integrals on $\texttt{Grp (IntEqvRel FinSet)}$
+\item The product of internal equivalence relations in 
+\begin{enumerate}
+\item $\texttt{IntGrp (IntEqvRel FinSet)}$
+\item $\texttt{IntEqvRel FinSet}$ consists of ordinary equivalence relations in sets
+\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+Let $E$ be an internal equivalence relation in finite sets. Write $E.Obj$ for its objects and $E.Hom$ for its morphisms. Note that $(Dom,Cod): E.Hom ⭢ E.Obj \times E.Obj$ is an injective function between finite sets. A function φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y) factors through E/$\sim$ is the same as a certain map of internal equivalence relations in which ℝ gets the equality relation. If we write ℝ${}_{=}$ for the internal equivalence relation on ℝ, then we can think of this as a map in $\texttt{IntEqvRel Set}$. We write [E,ℝ${}_{=}$] for the ℝ-vector space whose elements are functions φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y).
+\fi
+
+\section{}
+
+
+
+\section{Closed and Internal Equivalence Relations}
+
+\begin{enumerate}[(i)]
+\item Definition of a category
+\item FinSet
+\begin{enumerate}
+\item The category FinSet of finite sets 
+\end{enumerate}
+\item Pro : Cat → Cat (See Johnstone)
+\item Top \iffalse
+\item Definition of compact
+\item Definition of Hausdorff
+\item Definition of a cofiltered diagram
+\item Definition of a cofiltered limit on objects
+\item Definition the category Pro C for a category C
+\item The product of profinite sets is profinite and satisfies the universal property of product in profinite sets.
+\item Definition of a $\texttt{Pro FinSet}$
+\item Definition of a $\texttt{CH}$ the category of compact hausdorff topological spaces, a fully faithful subcategory of topological spaces  \fi
+\item Definition of the category of profinite topological spaces
+\item Definition of a closed equivalence relation on a profinite set
+\item The discrete topological space of a topological space (${}^{dis}$)
+\item The Stone-Čech compactification of a topological space (${}^{cmp}$)
+\end{enumerate}
+
+    
+\begin{definition}
+Consider the functor $(-){}^{d}{}^{s} : \texttt{Top} \rightarrow \texttt{Top}$, which is defined as sending a topological space $X$ to the Stone-Čech compactification of discrete space with $\texttt{X.obj}$ as objects, and similarly on maps. If $\texttt{X}$ is a compactum, then there is a map $\texttt{f : X}$${}^{ds}$$\rightarrow$\texttt{X}$ such that $\texttt{X}$$^{}$ 
+\end{definition}
+
+
+{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $Y $x ${}_{X} Y$ forms the morphism component of an internal equivalence relation.\\
+
+{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $X$ forms the quotient coeq ($\pi_1$, $\pi_2$), where $\pi_1, \pi_2 : Y \times_{X} Y \rightarrow Y$ are the projection maps.\\
+
+
+\begin{enumerate}[(a)]
+\item F and G form a categorical equivalence
+\end{enumerate}
+
+See \href{}{Condensed Mathematics} page 17.\\
+
+
+
+\section{Haar Integral on Finite Discrete Groups}
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+
+\section{Haar Integral on Profinite Groups}
+
+
+
+\section{Gelfand Duality}
+
+\begin{enumerate}
+\item Topology on the Cantor set
+\item ℝ in trinary
+\item Urysohn's lemma and trinary
+\item 
+\end{enumerate}
 
 \end{document}
 
