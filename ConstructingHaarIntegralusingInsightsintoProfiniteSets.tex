@@ -78,26 +78,27 @@ $\mathsf{E.\ Dean\ Young}$
 
 \section{Introduction}
 
-Fix a universe $\texttt{u₀}$. Recall that a topological space $\texttt{TopologicalSpace u₀ : Type}$ consists of:
+Fix a universe $\texttt{u₀}$. A topological space $\texttt{TopologicalSpace u₀ : Type}$ consists of:
 
 \begin{enumerate}
-\item 
+\item A type $X : Type.\{u₀\}$.
+\item A type ...
 \end{enumerate}
 
 A topological space $\texttt{X : TopologicalSpace u₀}$ is hausdorff if ...\\
 
+A topological space $\texttt{}$ is compact if ...
 
-
+\begin{enumerate}
+\item Definition of compact
+\item Definition of Hausdorff
+\end{enumerate}
 
 A $\texttt{stone\_space : Type}$ is a compact, hausdorff, totally disconnected topological space. 
 
 We can form the category of stone spaces, $\texttt{Stn : Category stone\_space}$, which has $\texttt{stone\_space}$ as its objects. For the purposes of this exposition, a profinite set is an object in $\texttt{Pro.obj FinSet}$. 
 
 There is a categorical equivalence $\texttt{Pro.obj FinSet ≅ Stn}$.
-
-My goal is to put this demonstration of the existence of Haar integral in Lean 4.\\
-
-
 
 \begin{enumerate}
 \item Definition of an internal groupoid in a category
@@ -136,12 +137,7 @@ My goal is to put this demonstration of the existence of Haar integral in Lean 4
 \end{enumerate}
 \end{enumerate}
 
-\begin{enumerate}
-\item 
-\end{enumerate}
-
 Let $E$ be an internal equivalence relation in finite sets. Write $E.Obj$ for its objects and $E.Hom$ for its morphisms. Note that $(Dom,Cod): E.Hom ⭢ E.Obj \times E.Obj$ is an injective function between finite sets. A function φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y) factors through E/$\sim$ is the same as a certain map of internal equivalence relations in which ℝ gets the equality relation. If we write ℝ${}_{=}$ for the internal equivalence relation on ℝ, then we can think of this as a map in $\texttt{IntEqvRel Set}$. We write [E,ℝ${}_{=}$] for the ℝ-vector space whose elements are functions φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y).
-\fi
 
 \section{}
 
@@ -157,8 +153,6 @@ Let $E$ be an internal equivalence relation in finite sets. Write $E.Obj$ for it
 \end{enumerate}
 \item Pro : Cat → Cat (See Johnstone)
 \item Top \iffalse
-\item Definition of compact
-\item Definition of Hausdorff
 \item Definition of a cofiltered diagram
 \item Definition of a cofiltered limit on objects
 \item Definition the category Pro C for a category C
