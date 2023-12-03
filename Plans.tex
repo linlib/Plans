@@ -459,7 +459,6 @@ It will not be for many years that the ideas in this section come to fruition an
 \item The main properties of 𝔻𝕖𝕥 := Π${}_i$ Det${}^{(-1)^{i}}$(Φ)
 \end{enumerate}
 
-
 \subsection{Borel-Moore Homology and Cohomology with Compact Support}
 
 Borel-Moore homology and cohomology with compact support
@@ -479,56 +478,157 @@ Borel-Moore homology and cohomology with compact support
 \item Pullback and cup product
 \end{enumerate}
 
-\subsection{Intersection Theory}
-
-\begin{enumerate}
-\item Well behaved cycle maps between pullback and cohomology classes
-\end{enumerate}
-
 \subsection{The Kunneth Theorem}
 
+\begin{enumerate}
+\item length and local rings
+\item Tor
+\end{enumerate}
+
+\subsection{Intersection Theory}
+
+In this section I would like to establish a few core results concerning intersections. By the date of the implementation of stage III, we will have finished the following repositories:
+
+\begin{enumerate}[(a)]
+\item ThreeWhiteheadTheoremsandThreePuppeSequences
+\item ThreeStableHomotopyCategoriesandThreeLongExactSequences
+\item GeometricMapsinHigherToposTheory
+\item GeometricMapsinStableHomotopyTheory
+\end{enumerate}
+
+We will then be in a place to consider an intersection theory using the smash product, ⊗. The smash product is subtle and breaks the three-fold division present in the repositories (a) and (b) above.\\
+
+\begin{enumerate}
+\item Well behaved cycle maps between pullback and cohomology classes.
+\item We would like to mention how these results relate to Bézout's theorem.
+\item https://en.wikipedia.org/wiki/Intersection_theory
+\end{enumerate}
 
 \subsection{The Lefschetz Fixed Point Theorem}
 
+
+
 \begin{enumerate}
-\item \iffalseThe Lefschetz Fixed Point Theorem will follow from the work on intersection theory, the Kunneth theorem, and Poincare duality.\fi
+\item The Lefschetz Fixed Point Theorem will follow from the work on intersection theory, the Kunneth theorem, and Poincare duality.
 \item 
 \end{enumerate}
 
-\subsection{L-Functions}
+
+
+
+\subsection{Connecting the Dots with the Rings in Mathlib 4}
+
+In this section, we will define the following rings:
+
+\begin{enumerate}
+\item ℚ
+\item ℝ, ℝˢᵉᵖ, ℂ
+\item ℤₚ
+\item ℤ̂
+\item ℤ̂ ≅ Π ℤₚ
+\item ℚₚ, ℚₚˢᵉᵖ, ℂₚ
+\item 𝔸ᶠⁱⁿ
+\item 𝔸
+\end{enumerate}
+
+Each of these will be defined first as E∞-rings using the models in the repository of  $\texttt{ThreeStableHomotopyCategoriesandThreeLongExactSequences}$. We will also use the definition of unramified extensions established in the fourth repository,  $\texttt{GeometricMapsinStableHomotopyTheory}$. 
+
+
+
+
+\subsection{exp and log}
 
 \begin{enumerate}
 \item ℚ contains the coefficients in the power series of both exp and log
 \item Cohomology with rational coefficients
 \item 1/(1-z) : ??? in the context of L-functions
-\item 1/(1-z) is to do with the homotopy coequilizer of 1 : ℂ ⭢ ℂ and z: ℂ ⭢ ℂ namely Δ¹ × ℂ...into ℂ ... 
 \item exp : ℂ ⭢ ℂˣ
 \item log : π⃡₀.obj (P⃡.obj ℂˣ) ⭢ ℂ
-\item 1/(1-z)...
+\item 1/(1-tz)
 \item Under a wide variety of circumstances, the product over n of det(ΩⁿΦ) to the power (-1)ⁿ is the unique invariant with a multiplication rule for exact sequences.
-\item log(1-tΦ) and -log(1-tΦ) both have power-series expansions around t = 0
-\item (1-tΦ)adj(1-tΦ) = det(1-tΦ)
-\item log(1-tΦ) 
-\item Functional equation given Poincare duality
+\item adj(1-tΦ)(1-tΦ)= det(1-tΦ)
+\item log(1/(1-tΦ))
+\item log(1/(1-tΦ)) = -log(1-tΦ) 
+\item log(1-tΦ) = ʃ (n : Nat)  Pow n (t * Φ)
+\item If \(\Phi\) is a complex number within the unit disc (i.e., \(|\Phi| < 1\)), and you are looking to express \(\log(1 - t\Phi)\) as a sum over the natural numbers \(ℕ\), then we can consider using the Taylor series expansion of the logarithmic function.
+
+The Taylor series expansion of \(\log(1 - x)\) around \(x = 0\) is given by:
+
+\[
+\log(1 - x) = -\sum_{n=1}^{\infty} \frac{x^n}{n}
+\]
+
+In your case, where \(x = t\Phi\), this becomes:
+
+\[
+\log(1 - t\Phi) = -\sum_{n=1}^{\infty} \frac{(t\Phi)^n}{n}
+\]
+
+This series converges for \(|t\Phi| < 1\). Since \(|\Phi| < 1\) as \(\Phi\) is in the unit disc, the series converges for \(|t| < 1/|\Phi|\).\\
+
+Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum over the natural numbers as long as the product \(t\Phi\) satisfies the convergence condition.
+\item log(1-tΦ) and both have power-series expansions around t = 0
+\item (1 - t * Φ) * adj(1- t * Φ) = det(1- t * Φ)
+\item log(1-tΦ) = - ʃ (n : ℕ) (tΦ)ⁿ
+\item log(1/(1-tΦ)) =  ʃ (n : ℕ) (tΦ)ⁿ
+\item Functional equation given a Poincare duality
+\end{enumerate}
+
+\subsection{The Cayley-Hamilton Theorem}
+
+\begin{enumerate}
+\item (Φ - λ I) • adj(Φ- λ I)
+\item 
 \end{enumerate}
 
 
+\subsection{L-Functions}
+
+\begin{enumerate}
+\item 
+\end{enumerate}
 
 \subsection{Unitary Groups and ℤ[x₁,...,xₙ]}
 
 \begin{enumerate}
 \item I would like to form U(n) and also a group U(∞), the group of unitary operators on Hilbert space
 \item The classifying space construction is related to the symmetric group and to the symmetric polynoimals
-\item ℤ[x₁,...,xₙ] is to do with the cohomology ring of U(n).
+\item ℤ[x₁,...,xₙ] is to do with the cohomology ring of U(n)
+\item Fix K(x₁,...,xₙ)
+\item 
 \end{enumerate}
 
 
 \subsection{Etale Homotopy}
 
+Consider one of the internal objects defined in the first repository of $\texttt{ThreeWhiteheadTheoremsandThreePuppeSequences}$:
+
+\begin{enumerate}
+\item Internal category
+\item Internal groupoid
+\item Internal group
+\end{enumerate}
+
+Suppose we are given a functor of the form:
+
+\begin{enumerate}
+\item Functor Directoids ∞-Cat
+\item Functor Spectroids ∞-Grpd
+\item Functor Spectra ∞-Grpd₀
+\end{enumerate}
+
 \begin{enumerate}
 \item How to obtain an ∞-category from a map of A∞-rings
 \item How to obtain an ∞-groupoid from a map of E∞-rings
-\item \iffalseHow to obtain a based connected ∞-groupoid from a map of E∞-rings over ???\fi
+\item How to obtain a based connected ∞-groupoid from a coconnected map of E∞-ring
+\end{enumerate}
+
+
+\subsection{Miscellaneous}
+
+\begin{enumerate}
+\item ℚₚˣ
+\item ℚ((x₁,...,xₙ))...
 \end{enumerate}
 
 
