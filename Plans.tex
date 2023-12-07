@@ -313,7 +313,14 @@
 
 \begin{document}
 
-In the document below I state my interests concerning mathematics in Lean 4. Over the next four year period, I would like to accomplish stages I and II of the plan below. These plans are detailed in 
+In the document below I state my interests concerning mathematics in Lean 4. Over the next four year period, I would like to accomplish stages I and II of the plan below. Before that, I would like to take note of three existing repositories which have established a lot of homotopy in the $\texttt{Lean}$ computer proof assistant:
+
+\begin{enumerate}
+\item \href{https://github.com/cmu-phil/Spectral/blob/master/README.md}{spectral} (for $\texttt{Lean 2}$)
+\item \href{https://github.com/emilyriehl}{remilyreihl} (for $\texttt{???}$)
+\item \href{https://github.com/joelriou}{joelriou} (for $\texttt{Lean 4}$)
+\end{enumerate}
+
 
 \section{\scalebox{0.6}{Stage I: goals concerning homotopy and stable homotopy}}
 
@@ -361,60 +368,73 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 
 {\bf STAGE II (TOPOLOGY):}
 \begin{enumerate}
-\item (Topology Project I, 2026)
+\item (Internal Universes for Higher Topos Theory)
 \begin{enumerate}
-\item The construction of the following universe objects:
+\item The construction of the following internal universe objects:
 \begin{enumerate}
-\item ∞${}\_$(∞-Cat) : ∞-Cat.α
-\item ∞${}\_$(∞-Grpd) : ∞-Cat.α
-\item ∞${}\_$(∞-Grpd₀) : ∞-Cat.α
-\item D(∞${}\_$(∞-Cat)) : ∞-Cat.α
-\item D(∞${}\_$(∞-Grpd)) : ∞-Cat.α
-\item D(∞${}\_$(∞-Grpd₀)) : ∞-Cat.α
+\item ∞${}\_$(∞-Cat) : ∞-Cat
+\item ∞${}\_$(∞-Grpd) : ∞-Cat
+\item ∞${}\_$(∞-Grpd₀) : ∞-Cat
+\item D⃗(∞${}\_$(∞-Cat)) : ∞-Cat and its relationship with π⃗₁.obj (∞${}\_$(∞-Cat))
+\item D⃡(∞${}\_$(∞-Grpd)) : ∞-Cat and its relationship with π⃡₁.obj (∞${}\_$(∞-Grpd))
+\item D(∞${}\_$(∞-Grpd₀)) : ∞-Cat and its relationship with π₁.obj (∞${}\_$(∞-Grpd₀))
 \end{enumerate}
 \item The construction of the following:
 \begin{enumerate}
-\item ∞${}\_$(∞-Cat)⁄C : ∞-Cat.α
-\item ∞${}\_$(∞-Grpd)⁄G : ∞-Cat.α
-\item ∞${}\_$(∞-Grpd₀)⁄G₀ : ∞-Cat.α
-\item D(∞${}\_$(∞-Cat)⁄C) : ∞-Cat.α
-\item D(∞${}\_$(∞-Grpd)⁄G) : ∞-Cat.α
-\item D(∞${}\_$(∞-Grpd₀)⁄G₀) : ∞-Cat.α
+\item ∞${}\_$(∞-Cat)⁄C : ∞-Cat
+\item ∞${}\_$(∞-Grpd)⁄G : ∞-Cat
+\item ∞${}\_$(∞-Grpd₀)⁄G₀ : ∞-Cat
+\item D⃗(∞${}\_$(∞-Cat)⁄C) : ∞-Cat
+\item D⃡(∞${}\_$(∞-Grpd)⁄G) : ∞-Cat
+\item D(∞${}\_$(∞-Grpd₀)⁄G₀) : ∞-Cat
 \end{enumerate}
-\item The theory of pointed Kan extensions from the perspective of directed homotopy pullback of ⊥ : * ⭢ ∞${}\_$(∞-Cat)... or perhaps some kind of directed derived category instead. See our "\texttt{pullback}$\_$\texttt{system}" structure.
-\item The relationship between the projection formulas and the condition of being an open or closed map in frame-local theory. See \href{https://ncatlab.org/nlab/show/closed+morphism}{here} and \href{https://ncatlab.org/nlab/show/open+morphism}{here}.
-\item Defining etale unions and proper intersections in the style of Martin Escardo and Paul Taylor.
+\item I am interested in the theory of pointed Kan extensions from the perspective of the directed homotopy pullback of a functor F : X ⭢ ∞$\_$(∞-Cat) with the functor ⊥ : *$\_$(∞-Cat) ⭢ ∞${}\_$(∞-Cat) which sends the unique object O : *$\_$(∞-Cat) to the singleton in the internal universe. This is what is called unstraightening. We take inspiration from the following passages:
+\begin{enumerate}
+\item Saunders Maclane, ```Sheaves in Geometry and Logic''', pages 41-42
+\item Jacob Lurie, ```Higher Topos theory''', pages 169-204
+\item The NLab article titled ```straightening functor''', https://ncatlab.org/nlab/show/straightening+functor
+\end{enumerate}
+\item Consider the relationship between the projection formulas and the condition of being an open or closed map in frame-local theory. See the following two NLab articles featuring how the projection formulas relate to the condition of being open or closed for the case of frames:
+\begin{enumerate}
+\item \href{https://ncatlab.org/nlab/show/closed+morphism}{here}
+\item \href{https://ncatlab.org/nlab/show/open+morphism}{here}
+\end{enumerate} 
+This fascinating formula is also one that emerges in higher topos theory and higher algebra. While all pullbacks arise as products in a frame, this is not the case for all constituents of $\texttt{pullback\_system}$. Geometric maps between pullback systems $\texttt{P₁, P₂ : pullback\_system}$ consist of a functor $\texttt{F.fun : P₁.cat ⥤ P₂.cat}$ such that the induced functor $\texttt{F.fun⁄X : P₁.cat⁄X ⥤ P₂.cat⁄(F.cat.obj X)}$ satisfies $\texttt{is\_left\_adjoint F.fun⁄X : Prop}$.
+\item Consider the notions of proper and étale, and also the notions of overt discrete and compact hausdorff. These conditions were explored by Paul Taylor and Martin Escardó using mathematics related to topological frames with compact-open topologies arising in the study of cartesian closed (convenient) categories of topological spaces. They have also been explored extensively in algebraic geometry and number theory, where the conditions of étale, proper, ind-finite, profinite, universally open, universally closed, open diagonal, closed diagonal, universally open diagonal, and universally closed diagonal all play an important role. 
+\item Another fascinating prospect which arises from Taylor and Escardo's treatment of the subject is the availability of compact intersections of closed objects and some similar operations. We hope to explore these in relation to geometric maps as well, with careful consideration of Lurie's HTT and Johnstone's topos theory compendium, specifically the section on geometric maps. 
 \item Proper intersections of closed are closed and etale unions of opens are open.
 \item Proper iff universally closed, Étale iff universally open.
 \item Proper iff cofiltered limit in the "category of actions", Étale iff filtered colimit in the "category of actions". In the case of frame-local theory, this is a certain structure to do with a frame (a particular join lattice), but viewed in the category of complete partial orders as opposed to frames and locales.
 \item Tychonoff's theorem: 
 \end{enumerate}
-\item (Topology Project II, 2027):
+\item (Internal Universes for Higher Algebra):
 \begin{enumerate}
-\item The construction of the following universe objects:
+\item In this fourth repository, I would like construct at the very least the following internal universe objects:
 \begin{enumerate}
-\item ∞${}\_$(Directoid) : ∞-Cat.α
-\item ∞${}\_$(Spectroid) : ∞-Cat.α
-\item ∞${}\_$(Spectra) : ∞-Cat.α
-\item D(∞${}\_$(Directoid)) : ∞-Cat.α
-\item D(∞${}\_$(Spectroid)) : ∞-Cat.α
-\item D(∞${}\_$(Spectra)) : ∞-Cat.α
+\item ∞${}\_$(Directoid) : ∞-Cat
+\item ∞${}\_$(Spectroid) : ∞-Cat
+\item ∞${}\_$(Spectra) : ∞-Cat
+\item D(∞${}\_$(Directoid)) : ∞-Cat
+\item D(∞${}\_$(Spectroid)) : ∞-Cat
+\item D(∞${}\_$(Spectra)) : ∞-Cat
 \end{enumerate}
-\item The construction of the following universe objects:
-\begin{enumerate}
-\item Mon D(∞${}\_$(Directoid)) : ∞-Cat.α
-\item Mon D(∞${}\_$(Spectroid)) : ∞-Cat.α
-\item Mon D(∞${}\_$(Spectra)) : ∞-Cat.α
-\item Com D(∞${}\_$(Directoid)) : ∞-Cat.α
-\item Com D(∞${}\_$(Spectroid)) : ∞-Cat.α
-\item Com D(∞${}\_$(Spectra)) : ∞-Cat.α
-\end{enumerate}
+We are also interested in various properties that these have, and what they classify (i.e. functors F : X ⭢ D(∞${}\_$(Spectra)), functors F : X ⭢ D(∞${}\_$(Spectroid)), and functors F : X ⭢ D(∞${}\_$(Directoid)) : ∞-Cat).
 \item The construction of the following:
 \begin{enumerate}
-\item Act D : ∞-Cat.α 
-\item Act S : ∞-Cat.α
-\item Act S : ∞-Cat.α
+\item Mon (D(∞${}\_$(Directoid),???) : ∞-Cat
+\item Mon (D(∞${}\_$(Spectroid)),???) : ∞-Cat
+\item Mon (D(∞${}\_$(Spectra)),) : ∞-Cat
+\item ComMon (D(∞${}\_$(Directoid)),???) : ∞-Cat
+\item ComMon (D(∞${}\_$(Spectroid)),???) : ∞-Cat
+\item ComMon (D(∞${}\_$(Spectra)),⊗) : ∞-Cat
 \end{enumerate}
+\item We would also like to detail the construction of the following internal monoid actions and internal commutative monoid actions:
+\begin{enumerate}
+\item Act D : ∞-Cat
+\item Act S : ∞-Cat
+\item Act S : ∞-Cat
+\end{enumerate}
+\item I don't as of yet understand which internal monoids and internal commutative monoids in the derived category of the stable homotopy category produce internal monoids in the six stable models of the $\texttt{ThreeFreudenthalSuspensionTheoremsandThreeLongExactSequences}$ repository E∞ and A∞ ring spectra do functorially produce internal monoids and internal commutative monoids in the derived category of the stable homotopy category.
 \item Ramification 
 \item The closed and open conditions and their relationship with the projection formulas.
 \item Universally closed intersections of closed maps are closed and universally open etale unions of opens are open.
@@ -427,12 +447,16 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \end{enumerate}
 
 
-\section{STAGE III: Number theory and beyond}
+\section{STAGE III}
 
-It will not be for many years that the ideas in this section come to fruition and take their place on the computer. The two stages before this are quite extensive.\\
+It will not be for many years that the ideas in this section come to fruition and take their place on the computer, at least as far as the present project is concerned. 
 
-\subsection{Spectral Sequences and Exact Couples}
+\subsection{Exact Couples}
 
+\begin{enumerate}
+\item An exact couple is ...
+\item ...
+\end{enumerate}
 
 
 \subsection{Derivations and Flat Connections}
@@ -455,9 +479,10 @@ It will not be for many years that the ideas in this section come to fruition an
 \subsection{Trace and Determinant}
 
 \begin{enumerate}
-\item The main properties of 𝕋𝕣 := Σ${}_{i}$ $(-1)^{i}$ * Tr${}^{(-1)^{i}}$(Φ)
+\item The main properties of 𝕋𝕣  := Σ${}_{i}$ $(-1)^{i}$ * Tr${}^{(-1)^{i}}$(Φ)
 \item The main properties of 𝔻𝕖𝕥 := Π${}_i$ Det${}^{(-1)^{i}}$(Φ)
 \end{enumerate}
+
 
 \subsection{Borel-Moore Homology and Cohomology with Compact Support}
 
@@ -478,157 +503,56 @@ Borel-Moore homology and cohomology with compact support
 \item Pullback and cup product
 \end{enumerate}
 
-\subsection{The Kunneth Theorem}
-
-\begin{enumerate}
-\item length and local rings
-\item Tor
-\end{enumerate}
-
 \subsection{Intersection Theory}
 
-In this section I would like to establish a few core results concerning intersections. By the date of the implementation of stage III, we will have finished the following repositories:
-
-\begin{enumerate}[(a)]
-\item ThreeWhiteheadTheoremsandThreePuppeSequences
-\item ThreeStableHomotopyCategoriesandThreeLongExactSequences
-\item GeometricMapsinHigherToposTheory
-\item GeometricMapsinStableHomotopyTheory
-\end{enumerate}
-
-We will then be in a place to consider an intersection theory using the smash product, ⊗. The smash product is subtle and breaks the three-fold division present in the repositories (a) and (b) above.\\
-
 \begin{enumerate}
-\item Well behaved cycle maps between pullback and cohomology classes.
-\item We would like to mention how these results relate to Bézout's theorem.
-\item https://en.wikipedia.org/wiki/Intersection_theory
+\item Well behaved cycle maps between pullback and cohomology classes
 \end{enumerate}
+
+\subsection{The Kunneth Theorem}
+
 
 \subsection{The Lefschetz Fixed Point Theorem}
 
-
-
 \begin{enumerate}
-\item The Lefschetz Fixed Point Theorem will follow from the work on intersection theory, the Kunneth theorem, and Poincare duality.
+\item \iffalseThe Lefschetz Fixed Point Theorem will follow from the work on intersection theory, the Kunneth theorem, and Poincare duality.\fi
 \item 
 \end{enumerate}
 
-
-
-
-\subsection{Connecting the Dots with the Rings in Mathlib 4}
-
-In this section, we will define the following rings:
-
-\begin{enumerate}
-\item ℚ
-\item ℝ, ℝˢᵉᵖ, ℂ
-\item ℤₚ
-\item ℤ̂
-\item ℤ̂ ≅ Π ℤₚ
-\item ℚₚ, ℚₚˢᵉᵖ, ℂₚ
-\item 𝔸ᶠⁱⁿ
-\item 𝔸
-\end{enumerate}
-
-Each of these will be defined first as E∞-rings using the models in the repository of  $\texttt{ThreeStableHomotopyCategoriesandThreeLongExactSequences}$. We will also use the definition of unramified extensions established in the fourth repository,  $\texttt{GeometricMapsinStableHomotopyTheory}$. 
-
-
-
-
-\subsection{exp and log}
+\subsection{L-Functions}
 
 \begin{enumerate}
 \item ℚ contains the coefficients in the power series of both exp and log
 \item Cohomology with rational coefficients
 \item 1/(1-z) : ??? in the context of L-functions
+\item 1/(1-z) is to do with the homotopy coequilizer of 1 : ℂ ⭢ ℂ and z: ℂ ⭢ ℂ namely Δ¹ × ℂ...into ℂ ... 
 \item exp : ℂ ⭢ ℂˣ
 \item log : π⃡₀.obj (P⃡.obj ℂˣ) ⭢ ℂ
-\item 1/(1-tz)
+\item 1/(1-z)...
 \item Under a wide variety of circumstances, the product over n of det(ΩⁿΦ) to the power (-1)ⁿ is the unique invariant with a multiplication rule for exact sequences.
-\item adj(1-tΦ)(1-tΦ)= det(1-tΦ)
-\item log(1/(1-tΦ))
-\item log(1/(1-tΦ)) = -log(1-tΦ) 
-\item log(1-tΦ) = ʃ (n : Nat)  Pow n (t * Φ)
-\item If \(\Phi\) is a complex number within the unit disc (i.e., \(|\Phi| < 1\)), and you are looking to express \(\log(1 - t\Phi)\) as a sum over the natural numbers \(ℕ\), then we can consider using the Taylor series expansion of the logarithmic function.
-
-The Taylor series expansion of \(\log(1 - x)\) around \(x = 0\) is given by:
-
-\[
-\log(1 - x) = -\sum_{n=1}^{\infty} \frac{x^n}{n}
-\]
-
-In your case, where \(x = t\Phi\), this becomes:
-
-\[
-\log(1 - t\Phi) = -\sum_{n=1}^{\infty} \frac{(t\Phi)^n}{n}
-\]
-
-This series converges for \(|t\Phi| < 1\). Since \(|\Phi| < 1\) as \(\Phi\) is in the unit disc, the series converges for \(|t| < 1/|\Phi|\).\\
-
-Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum over the natural numbers as long as the product \(t\Phi\) satisfies the convergence condition.
-\item log(1-tΦ) and both have power-series expansions around t = 0
-\item (1 - t * Φ) * adj(1- t * Φ) = det(1- t * Φ)
-\item log(1-tΦ) = - ʃ (n : ℕ) (tΦ)ⁿ
-\item log(1/(1-tΦ)) =  ʃ (n : ℕ) (tΦ)ⁿ
-\item Functional equation given a Poincare duality
-\end{enumerate}
-
-\subsection{The Cayley-Hamilton Theorem}
-
-\begin{enumerate}
-\item (Φ - λ I) • adj(Φ- λ I)
-\item 
+\item log(1-tΦ) and -log(1-tΦ) both have power-series expansions around t = 0
+\item (1-tΦ)adj(1-tΦ) = det(1-tΦ)
+\item log(1-tΦ) 
+\item Functional equation given Poincare duality
 \end{enumerate}
 
 
-\subsection{L-Functions}
-
-\begin{enumerate}
-\item 
-\end{enumerate}
 
 \subsection{Unitary Groups and ℤ[x₁,...,xₙ]}
 
 \begin{enumerate}
 \item I would like to form U(n) and also a group U(∞), the group of unitary operators on Hilbert space
 \item The classifying space construction is related to the symmetric group and to the symmetric polynoimals
-\item ℤ[x₁,...,xₙ] is to do with the cohomology ring of U(n)
-\item Fix K(x₁,...,xₙ)
-\item 
+\item ℤ[x₁,...,xₙ] is to do with the cohomology ring of U(n).
 \end{enumerate}
 
 
 \subsection{Etale Homotopy}
 
-Consider one of the internal objects defined in the first repository of $\texttt{ThreeWhiteheadTheoremsandThreePuppeSequences}$:
-
-\begin{enumerate}
-\item Internal category
-\item Internal groupoid
-\item Internal group
-\end{enumerate}
-
-Suppose we are given a functor of the form:
-
-\begin{enumerate}
-\item Functor Directoids ∞-Cat
-\item Functor Spectroids ∞-Grpd
-\item Functor Spectra ∞-Grpd₀
-\end{enumerate}
-
 \begin{enumerate}
 \item How to obtain an ∞-category from a map of A∞-rings
 \item How to obtain an ∞-groupoid from a map of E∞-rings
-\item How to obtain a based connected ∞-groupoid from a coconnected map of E∞-ring
-\end{enumerate}
-
-
-\subsection{Miscellaneous}
-
-\begin{enumerate}
-\item ℚₚˣ
-\item ℚ((x₁,...,xₙ))...
+\item \iffalseHow to obtain a based connected ∞-groupoid from a map of E∞-rings over ???\fi
 \end{enumerate}
 
 
