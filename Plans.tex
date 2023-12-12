@@ -540,12 +540,60 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 
 \section{STAGE III: Number theory and beyond}
 
+\begin{enumerate}
+\item 
+\item Σ∞ and Ω∞
+\item Constructing the A-∞ ring ℤ
+\item Constructing  ℤ[[x]] [ X,ℤ]
+\item Constructing the E-∞ ring ℤ/nℤ
+\item Constructing Spec(ℤ)
+\item [BBℤ,BBℤ] ≅ ℤ
+\item How to get ℤ[[x]] as a cohomology ring.
+\begin{enumerate}
+\item https://math.stackexchange.com/questions/2015228/how-to-show-mathbbcp-infty-mathbbcp-infty-cong-mathbbz
+\end{enumerate}
+\item Chern-Weil Theory and  ℤ[[x₁,...,xₙ]]
+\item How to get ℤ[[x₁,...,xₙ]] as a cohomology ring.
+\begin{enumerate}
+\item 
+\end{enumerate}
+\item How to get ℚ[[x]] as a cohomology ring.
+\begin{enumerate}
+\item 
+\end{enumerate}
+\item How to get ℚ[[x₁,...,xₙ]] as a cohomology ring.
+\begin{enumerate}
+\item 
+\end{enumerate}
+\item GL₁(ℚₚ)-representations and finite étale extensions of ℚₚ
+\item GL₁(ℚₚ)-representations and the profinite abelian extensions of ℚₚ
+\item 
+\begin{enumerate}
+\item 
+\end{enumerate}
+\item GLₙ(ℚₚ)-representations.
+\item https://math.dartmouth.edu/~eassaf/Coloquium_talk_-_p-adic_Langlands
+\item ℚ((x₁,...,xₙ))
+\item We begin the subsection here with the concept of a fixed subobject given an internal action for an object in one of the stable models. We then relate the fixed object to its universal property under certain conditions.
+\item Unitary groups
+\item One giant group which either (a) quotients onto all unitary groups... (b)
+\item ℤ[x₁,...,xₙ] is the derived cohomology ring.
+\item I would like to form U(n) and also a group U(∞), the group of unitary operators on Hilbert space
+\item BU(n) classifies rank n vector bundles
+\item GLₙ(ℂ)?
+\item U(1)ⁿ ⭢ U(n)¹
+\item Volume of U(n)
+\item ∪ U(n)
+\item 
+\item H
+\item U(∞) := 
+\item The classifying space construction is related to the symmetric group and to the symmetric polynoimals
+\item U(n)
+\end{enumerate}
+
 It will not be for many years that the ideas in this section come to fruition and take their place on the computer. The two stages before this are quite extensive.\\
 
-\subsection{Connecting the Dots with the Rings in Mathlib 4}
-
 In this section, we will define the following rings:
-
 \begin{enumerate}
 \item ℚ
 \item ℝ, ℝˢᵉᵖ, ℂ
@@ -569,9 +617,7 @@ Each of these will be defined first as E∞-rings using the models in the reposi
 
 \subsection{Derivations and Flat Connections}
 
-
-
-
+Derivations and flat connections .
 
 \begin{enumerate}
 \item Derivations 
@@ -605,6 +651,7 @@ Borel-Moore homology and cohomology with compact support:\\
 \end{enumerate}
 
 https://homepages.warwick.ac.uk/staff/Martin.Gallauer/docs/m6ff.pdf
+
 
 I would eventually like to follow through on several analogous  "étalification" based cohomology theories:
 
@@ -706,13 +753,15 @@ Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum o
 \item log(1-tΦ) and both have power-series expansions around t = 0
 \item exp, log
 \item Tr : [V,V] ⭢ ℕ
+\item Algebraically closed field
+\item
 \item Det : [V,V] ⭢ k
 \item 𝕋𝕣 := Σ${}_{i}$ $(-1)^{i}$ * Tr${}^{(-1)^{i}}$(Φ)
 \item 𝔻𝕖𝕥 := Π${}_i$ Det${}^{(-1)^{i}}$(Φ)
 \item (1 - t * Φ) * adj(1 - t * Φ) = det(1- t * Φ)
 \item log(1 - t * Φ) = - ʃ (n : ℕ) (t * Φ)ⁿ
 \item is_invertible det( 1 - t * Φ )
-\item log( 1/(1-tΦ) ) =  ʃ (n : ℕ) (t * Φ)ⁿ
+\item log(1/(1-tΦ) ) =  ʃ (n : ℕ) (t * Φ)ⁿ
 \item Functional equation given a Poincare duality
 \item Sorry, I made a ton of mistakes. I guess I wanted A to be normal in the above. 
 \item The power series for log : Mat(n×n) ℂ converges for || Φ - λ I || < 1.
@@ -722,7 +771,8 @@ Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum o
 \subsection{L-Functions}
 
 \begin{enumerate}
-\item 
+\item Obtaining a graded ring from an A∞-ring. 
+\item Obtaining a graded ring from an E∞-ring.
 \end{enumerate}
 
 
@@ -756,25 +806,6 @@ It's possible that some of the theorems below could feature nicely in the theory
 \item 
 \end{enumerate}
 
-
-\subsection{Some Important Mathematical Objects}
-
-\begin{enumerate}
-\item GL₁(ℚₚ)-representations and the profinite abelian extensions of ℚₚ
-\item GLₙ(ℚₚ)-representations.
-\item https://math.dartmouth.edu/~eassaf/Coloquium_talk_-_p-adic_Langlands
-\item ℚ((x₁,...,xₙ))
-\item We begin the subsection here with the concept of a fixed subobject given an internal action for an object in one of the stable models. We then relate the fixed object to its universal property under certain conditions.
-\item Unitary groups
-\item One giant group which either (a) quotients onto all unitary groups... (b)
-\item ℤ[x₁,...,xₙ] is the derived cohomology ring 
-\item I would like to form U(n) and also a group U(∞), the group of unitary operators on Hilbert space
-\item BU(n) classifies rank n vector bundles
-\item GLₙ(ℂ)?
-\item 
-\item The classifying space construction is related to the symmetric group and to the symmetric polynoimals
-\item ℤ[x₁,...,xₙ] is to do with the cohomology ring of U(n)
-\end{enumerate}
 
 
 
