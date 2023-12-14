@@ -374,10 +374,9 @@ https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/how.20zfc.2
 https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/How.20to.20get.20HoTT.20people.20into.20Lean
 https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs
 
-
-
 Ramkumar Ramachandra
 Joel
+
 \fi
 
 \iffalse
@@ -438,12 +437,20 @@ In stage one, we would like to detail twelve major theorems:
 \item An analogue of the Puppe sequence for ∞-groupoids featuring an interval object along with two different structures from internal category theory (see Janelidze and Bourceux chapter 7).
 \end{enumerate}
 
+{\bf STAGE 0 (Category Theory)}
+\begin{enumerate}
+\item Pro : Cat → Cat
+\item Ind : Cat → Cat
+\end{enumerate}
+
+
+
 {\bf STAGE I (Twenty Four Goals):}
 \begin{enumerate}
 \item (Three Whitehead Theorems and Three Puppe Sequences, 2024)
 \begin{enumerate}
 \item See the goals listed in the pdf file under the $\texttt{Three Whitehead Theorems and Three Puppe Sequences}$ repository.
-\item Term length, typeclasses, and inductive types
+\item 
 \end{enumerate}
 \item (Three Freudenthal Suspension Theorems and Three Long Exact Sequences, 2025)
 \begin{enumerate}
@@ -483,6 +490,7 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \item D(∞${}\_$(∞-Grpd)) : ∞-Cat.α
 \item D(∞${}\_$(∞-Grpd₀)) : ∞-Cat.α
 \end{enumerate}
+\item (Straightening and Unstraightening) Establishing the straightening/unstraightening categorical equivalence, featuring directed homotopy pullback of ⊥ : * ⭢ ∞${}\_$(∞-Cat).
 \item The construction of the following:
 \begin{enumerate}
 \item ∞${}\_$(∞-Cat)⁄C : ∞-Cat.α
@@ -492,10 +500,14 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \item D(∞${}\_$(∞-Grpd)⁄G) : ∞-Cat.α
 \item D(∞${}\_$(∞-Grpd₀)⁄G₀) : ∞-Cat.α
 \end{enumerate}
-\item The theory of pointed Kan extensions from the perspective of directed homotopy pullback of ⊥ : * ⭢ ∞${}\_$(∞-Cat)... or perhaps some kind of directed derived category instead. See our "\texttt{pullback}$\_$\texttt{system}" structure.
-\item The relationship between the projection formulas and the condition of being an open or closed map in frame-local theory. See \href{https://ncatlab.org/nlab/show/closed+morphism}{here} and \href{https://ncatlab.org/nlab/show/open+morphism}{here}.
-\item Defining etale unions and proper intersections in the style of Martin Escardo and Paul Taylor.
-\item Proper intersections of closed are closed and etale unions of opens are open.
+\item (The Projection Formulas) The equivalence between the projection formulas and the condition of being an open or closed map in frame-local theory. See \href{https://ncatlab.org/nlab/show/closed+morphism}{here} and \href{https://ncatlab.org/nlab/show/open+morphism}{here}.
+\item (Universally Closed/Open) ???
+\item (Unramified/Separated) The equivalence between open/closed and universally open / universally closed.
+\item (Étale/Proper) 
+\item 
+\item 
+\item 
+\item Proper intersections of closed maps are closed and etale unions of opens are open.
 \item Proper iff universally closed, Étale iff universally open.
 \item Proper iff cofiltered limit in the "category of actions", Étale iff filtered colimit in the "category of actions". In the case of frame-local theory, this is a certain structure to do with a frame (a particular join lattice), but viewed in the category of complete partial orders as opposed to frames and locales.
 \item Tychonoff's theorem: 
@@ -516,9 +528,6 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \item Mon D(∞${}\_$(Directoid)) : ∞-Cat.α
 \item Mon D(∞${}\_$(Spectroid)) : ∞-Cat.α
 \item Mon D(∞${}\_$(Spectra)) : ∞-Cat.α
-\item Com D(∞${}\_$(Directoid)) : ∞-Cat.α
-\item Com D(∞${}\_$(Spectroid)) : ∞-Cat.α
-\item Com D(∞${}\_$(Spectra)) : ∞-Cat.α
 \end{enumerate}
 \item The construction of the following:
 \begin{enumerate}
@@ -538,13 +547,34 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \end{enumerate}
 
 
-\section{STAGE III: Number theory and beyond}
+\section{STAGE III: }
+
+{
+\footnotesize
+\begin{longtable}{|| l || l ||} 
+\multicolumn{2}{||c|c||}{\texttt{Ω∞ and Σ∞}} \\
+\hline \hline
+\texttt{Σ∞}  & \texttt{σ∞}   & \texttt{Ω∞} & \texttt{ω∞}  \\
+\hline
+\texttt{Σ∞}  & \texttt{σ∞}  & \texttt{Ω∞} & \texttt{ω∞}  \\
+\hline
+\texttt{Σ∞} & \texttt{σ∞}  & \texttt{Ω∞}  & \texttt{ω∞} \\
+\hline \hline
+\end{longtable}
+}
+
+and Ω⃗∞, ω⃗∞,  Σ⃗∞, σ⃗∞
+and Ω⃡∞, ω⃡∞, Σ⃡∞, σ⃡∞
+and Ω∞, ω∞, Σ∞, σ∞
+
+
+
 
 \begin{enumerate}
 \item 
-\item Σ∞ and Ω∞
-\item Constructing the A-∞ ring ℤ
-\item Constructing  ℤ[[x]] [ X,ℤ]
+\item Constructing the E∞-ring
+\item Constructing the A∞-ring ℤ
+\item Constructing  ℤ[[x]] ≅ [...Σ∞.obj B.obj B.obj ℤ,ℤ]
 \item Constructing the E-∞ ring ℤ/nℤ
 \item Constructing Spec(ℤ)
 \item [BBℤ,BBℤ] ≅ ℤ
@@ -557,17 +587,11 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \begin{enumerate}
 \item 
 \end{enumerate}
-\item How to get ℚ[[x]] as a cohomology ring.
-\begin{enumerate}
-\item 
-\end{enumerate}
-\item How to get ℚ[[x₁,...,xₙ]] as a cohomology ring.
-\begin{enumerate}
-\item 
-\end{enumerate}
 \item GL₁(ℚₚ)-representations and finite étale extensions of ℚₚ
+\item GLₙ(ℚₚ)-representations and finite étale extensions of ℚₚ((t))
+\item GLₙ(ℚˢᵉᵖ)-representations
 \item GL₁(ℚₚ)-representations and the profinite abelian extensions of ℚₚ
-\item 
+\item GLₙ(ℚₚˢᵉᵖ)-representations and 
 \begin{enumerate}
 \item 
 \end{enumerate}
@@ -806,7 +830,24 @@ It's possible that some of the theorems below could feature nicely in the theory
 \item 
 \end{enumerate}
 
+\iffalse
+\subsection{}
+Oh this reminds me of a formulation of classical mechanics I'm proud of. One thing that bugs me about hamiltonian mechanics as usually written is that it picks out time as special. So we think about trajectories as curves in a symplectic manifold times the real line (time). But we can say the same thing completely symmetrically, as follows:
+Let (M, ω) be a symplectic manifold and S a codimension 1 submanifold of "physical" states.  Then a curve W in S is a permitted trajectory when for each tangent vector v to W, the one-form omega(v) vanishes when restricted (pulled back) to S.
 
+M = cotangent bundle of spacetime.  Of course, momentum:space::energy:time\\
 
+S (for "on-shell") consists of those points (t,x,E,p) such that E=potential(x)+kinetic(p) is the actual energy.
 
+The symplectic form omega is dx wedge dp - dt wedge dE.
+
+We recover all and only the classical trajectories!
+bohrium — 9/13/23, 5:00 PM
+I think not, since we are working in a much flabbier setting than AG.  Diffeomorphisms allowed here.
+That said, I don't know any AG so maybe there is a good relationship there
+bohrium — 9/13/23, 5:01 PM
+Ain't this cool?
+This viewpoint nicely incorporates a background E&M field btw: the vector potential affects S.
+("Potential momentum" instead of "potential energy" so to speak)
+\fi
 \end{document}
