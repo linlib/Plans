@@ -144,8 +144,6 @@
 %\newunicodechar{}{$\mathbb{y}$}
 %\newunicodechar{}{$\mathbb{z}$}
 
-\usepackage{eucal}
-\usepackage{euscript}
 
 \newunicodechar{𝔄}{$\mathfrak{A}$}
 \newunicodechar{𝔅}{$\mathfrak{B}$}
@@ -324,7 +322,7 @@ Over the course of the next many years, I hope to develop the repositories at $\
 \begin{enumerate}[(a)]
 \item There are many models for ∞-categories, each of which satisfies the four goals expressed in the repository $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$ for ∞-categories (the first of the twelve mentioned goals). 
 \item It is best to start small, and to get one part correct at a time. Large PRs are hard to check and more prone to error.
-\item Many mathematicans are more interested in CW-complexes and point-set approaches to ∞-groupoids than the full view presented in $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$. It is desirable to have an approach which integrates modern and classical approaches. Further, the approaches which use simplicial sets (see $\textt{SSet}$) and point-set topology benefit from being accessible and familiar.
+\item Many mathematicans are more interested in CW-complexes and point-set approaches to ∞-groupoids than the full view presented in $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$. It is desirable to have an approach which integrates modern and classical approaches. Further, the approaches which use simplicial sets (see SSet) and point-set topology benefit from being accessible and familiar.
 \item It is important to ensure that code is usable for future projects, especially those which will add important API features.
 \end{enumerate}
 
@@ -348,9 +346,8 @@ On the other hand, a more careful inspection of the existing approaches reveals 
 
 One discussion on the Lean 4 Zulip from 2020 contained a similar observation, in which the prospects of a "plain formalization" are mentioned:
 
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/quasicategories
-
 \iffalse
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/quasicategories
 https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
 https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
 https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
@@ -549,16 +546,17 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 
 \section{STAGE III: }
 
+\iffalse
 {
 \footnotesize
 \begin{longtable}{|| l || l ||} 
-\multicolumn{2}{||c|c||}{\texttt{Ω∞ and Σ∞}} \\
+\iffalse\multicolumn{2}{||c|c||}{Ω∞ and Σ∞} \\\fi
 \hline \hline
-\texttt{Σ∞}  & \texttt{σ∞}   & \texttt{Ω∞} & \texttt{ω∞}  \\
+Σ∞ & σ∞  & Ω∞ & ω∞  \\
 \hline
-\texttt{Σ∞}  & \texttt{σ∞}  & \texttt{Ω∞} & \texttt{ω∞}  \\
+Σ∞  & σ∞ & Ω∞ & ω∞  \\
 \hline
-\texttt{Σ∞} & \texttt{σ∞}  & \texttt{Ω∞}  & \texttt{ω∞} \\
+Σ∞ & σ∞  & Ω∞ & ω∞ \\
 \hline \hline
 \end{longtable}
 }
@@ -567,7 +565,7 @@ and Ω⃗∞, ω⃗∞,  Σ⃗∞, σ⃗∞
 and Ω⃡∞, ω⃡∞, Σ⃡∞, σ⃡∞
 and Ω∞, ω∞, Σ∞, σ∞
 
-
+\fi
 
 
 \begin{enumerate}
@@ -596,7 +594,7 @@ and Ω∞, ω∞, Σ∞, σ∞
 \item 
 \end{enumerate}
 \item GLₙ(ℚₚ)-representations.
-\item https://math.dartmouth.edu/~eassaf/Coloquium_talk_-_p-adic_Langlands
+\item \iffalse https://math.dartmouth.edu/~eassaf/Coloquium_talk_-_p-adic_Langlands \fi
 \item ℚ((x₁,...,xₙ))
 \item We begin the subsection here with the concept of a fixed subobject given an internal action for an object in one of the stable models. We then relate the fixed object to its universal property under certain conditions.
 \item Unitary groups
@@ -647,12 +645,12 @@ Derivations and flat connections .
 \item Derivations 
 \begin{enumerate}
 \item Derivations as elements of the ℝ-linear dual of ...
-\item H₀ ([Ω∞ X,ℝ])
+\item H₁ ([Ω∞ X,ℝ])
 \end{enumerate}
 \item Connections
 \begin{enumerate}
 \item Flat connections as elements of the ℝ-linear dual of $\texttt{Ω\_(Spectra)C}$, where C is the cohomology content (an E∞-ring)
-\item H₀ ([ω∞ X V, ℝ])
+\item H₁ ([ω∞ X V, ℝ])
 \end{enumerate}
 \end{enumerate}
 
@@ -686,7 +684,9 @@ I would eventually like to follow through on several analogous  "étalification"
 \item ??? pॱ Ét(p)𛲔
 \end{enumerate}
 
+\iffalse
 I don't know of any "étalification", except one which on fibers takes the underlying discrete topology. That much shows up in the stone-čech compactification of the underlying set of a compact hausdorff topological space X, which has a canonical map into X. The condition on a topological space that it have an open diagonal is equivalent to discrete. The condition on a universally open map f : X ⭢ Y that Δ f f : X ⭢ X ×_(Y) X be open or universally open is related to being étale. 
+\fi
 
 \subsection{Poincare Duality}
 
@@ -698,10 +698,12 @@ I don't know of any "étalification", except one which on fibers takes the under
 \subsection{The Kunneth Theorem}
 
 \begin{enumerate}
-\item length
 \item Tor and Ext
-\item The significance of local rings.
 \end{enumerate}
+
+\iffalse
+local rings
+\fi
 
 \subsection{Intersection Theory}
 
@@ -719,7 +721,7 @@ We will then be in a place to consider an intersection theory using the smash pr
 \begin{enumerate}
 \item Well behaved cycle maps between pullback and cohomology classes.
 \item We would like to mention how these results relate to Bézout's theorem.
-\item https://en.wikipedia.org/wiki/Intersection_theory
+\item \iffalse https://en.wikipedia.org/wiki/Intersection_theory \fi
 \end{enumerate}
 
 \subsection{The Lefschetz Fixed Point Theorem}
@@ -750,14 +752,14 @@ We will then be in a place to consider an intersection theory using the smash pr
 \item (E.obj ℤ) × (E.obj ℤ) ⭢ (B.obj ℤ) × (E.obj ℤ)
 \item 
 \item exp : ℂ ⭢ ℂˣ
-\item log : π⃡₀.obj (P⃡.obj ℂˣ) ⭢ ℂ
+\item log : π⃡₁.obj (ℂˣ) ⭢ ℂ
 \item 1/(1-tz)
 \item Under a wide variety of circumstances, the product over n of det( H₀(Ωⁿ(Φ)) ) to the power (-1)ⁿ is the unique invariant with a multiplication rule for exact sequences.
 \item adj( 1 - t * Φ ) * ( 1 - t * Φ ) = det( 1 - t * Φ )
 \item log( 1/(1 - tΦ) )
 \item log( 1/(1 - t * Φ) ) = - log( 1-t * Φ ) 
 \item log(1 - t * Φ) = - ʃ (n : Nat)  Pow n (t * Φ)
-\item If \(\Phi\) is a complex number within the unit disc (i.e., \(|\Phi| < 1\)), and you are looking to express \(\log(1 - t\Phi)\) as a sum over the natural numbers \(ℕ\), then we can consider using the Taylor series expansion of the logarithmic function.
+\item \iffalse If \(\Phi\) is a complex number within the unit disc (i.e., \(|\Phi| < 1\)), and you are looking to express \(\log(1 - t\Phi)\) as a sum over the natural numbers \(ℕ\), then we can consider using the Taylor series expansion of the logarithmic function.
 
 The Taylor series expansion of \(\log(1 - x)\) around \(x = 0\) is given by:
 
@@ -773,7 +775,7 @@ In your case, where \(x = t\Phi\), this becomes:
 
 This series converges for \(|t\Phi| < 1\). Since \(|\Phi| < 1\) as \(\Phi\) is in the unit disc, the series converges for \(|t| < 1/|\Phi|\).\\
 
-Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum over the natural numbers as long as the product \(t\Phi\) satisfies the convergence condition.
+Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum over the natural numbers as long as the product \(t\Phi\) satisfies the convergence condition.\fi
 \item log(1-tΦ) and both have power-series expansions around t = 0
 \item exp, log
 \item Tr : [V,V] ⭢ ℕ
@@ -784,7 +786,7 @@ Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum o
 \item 𝔻𝕖𝕥 := Π${}_i$ Det${}^{(-1)^{i}}$(Φ)
 \item (1 - t * Φ) * adj(1 - t * Φ) = det(1- t * Φ)
 \item log(1 - t * Φ) = - ʃ (n : ℕ) (t * Φ)ⁿ
-\item is_invertible det( 1 - t * Φ )
+\item is\_invertible det( 1 - t * Φ )
 \item log(1/(1-tΦ) ) =  ʃ (n : ℕ) (t * Φ)ⁿ
 \item Functional equation given a Poincare duality
 \item Sorry, I made a ton of mistakes. I guess I wanted A to be normal in the above. 
