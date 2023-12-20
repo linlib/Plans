@@ -2,6 +2,11 @@
 \usepackage{background}
 \usepackage{graphicx}
 \usepackage{lipsum}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 
 
 \usepackage{hyperref}
@@ -71,138 +76,185 @@ $\mathsf{E.\ Dean\ Young}$
 }
 \usepackage{fancyhdr}
 
-\title{Constructing Haar Integral using Insights into Profinite Sets}
+\title{Proving the Existence of Haar Integral using Insights into Profinite Sets}
 \author{E. Dean Young}
 \begin{document}
 
-
 \section{Introduction}
 
-Fix a universe $\texttt{u₀}$. A topological space $\texttt{TopologicalSpace u₀ : Type}$ consists of:
+This document details a proof of the existence of Haar integral on compact Hausdorff topological groups using insights into profinite sets. The main part of the proof is a categorical equivalence between the category of compact hausdorff topological spaces and the category of closed equivalence relations in the category of stone spaces. This insight, sourced from Peter Scholze and Dustin Clausen's \href{Condensed Mathematics}{https://www.math.uni-bonn.de/people/scholze/Condensed.pdf}, allows the proof to be reduced to the easier construction of Haar integral on profinite sets.\\ 
 
-\begin{enumerate}
-\item A type $X : Type.\{u₀\}$.
-\item A type ...
-\end{enumerate}
+A goal for further into the future is to make a PR for Mathlib 4 constructing Haar integral in this way. In the more immediate future, I would like to focus on making the construction as accessible as possible. This could fit well with the approach of Scholze and Clausen, making critical use of one of their insights while remaining basic.\\
 
-A topological space $\texttt{X : TopologicalSpace u₀}$ is hausdorff if ...\\
+\section{Stone Spaces}
 
-A topological space $\texttt{}$ is compact if ...
-
-\begin{enumerate}
-\item Definition of compact
-\item Definition of Hausdorff
-\end{enumerate}
-
-A $\texttt{stone\_space : Type}$ is a compact, hausdorff, totally disconnected topological space. 
-
-We can form the category of stone spaces, $\texttt{Stn : Category stone\_space}$, which has $\texttt{stone\_space}$ as its objects. For the purposes of this exposition, a profinite set is an object in $\texttt{Pro.obj FinSet}$. 
-
-There is a categorical equivalence $\texttt{Pro.obj FinSet ≅ Stn}$.
-
-\begin{enumerate}
-\item Definition of an internal groupoid in a category
-\item Definition of an internal functor of internal groupoids in a category
-\item Definition of $\texttt{IntGrpd C}$
-\begin{enumerate}
-\item As a Mathlib structure with 16 components:
-\begin{enumerate}
-\item 
-\end{enumerate}
-\end{enumerate}
-\item Definition of an internal equivalence relation in a category
-\item Definition of an internal equivalence relation map of internal equivalence relations in a category
-\end{enumerate}
-
-\begin{enumerate}
-\item Definition of $\texttt{IntEqvRel C}$
-\item Definition of $\texttt{ℝ}$ as a topological space
-\item Definition of the Haar integral on an internal groupoid in finite sets
-\item Definition of the Haar measure on an internal groupoid in finite sets
-\item Definition of the Haar integral on an internal equivalence relation in finite sets
-\item Definition of the Haar measure on an internal equivalence relation in finite sets
-\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ Top}$
-\item Definition of the functor $\texttt{IntEqvRel (Pro C) ⭢ CompactHausdorff}$
-\item Definition of the functor $\texttt{(IntEqvRel (Pro FinSet)) ⭢ (Pro (IntEqvRel FinSet))}$
-\item Definition of the functor $\texttt{Grp C ⭢ Grp C}$
-\item Definition of an ultrafilter u : $\texttt{P(Bool) ⭢ Bool}$
-\item "ultrafilter convergence" and compactness
-\item "ultrafilter uniqueness" and the Hausdorff condition
-\item $\texttt{Functor (Grp (Pro (IntEqvRel FinSet))) (Pro (Grp (IntEqvRel FinSet)))}$
-\item Counting measures and counting integrals on $\texttt{Grp (IntEqvRel FinSet)}$
-\item The product of internal equivalence relations in 
-\begin{enumerate}
-\item $\texttt{IntGrp (IntEqvRel FinSet)}$
-\item $\texttt{IntEqvRel FinSet}$ consists of ordinary equivalence relations in sets
-\end{enumerate}
-\end{enumerate}
-
-Let $E$ be an internal equivalence relation in finite sets. Write $E.Obj$ for its objects and $E.Hom$ for its morphisms. Note that $(Dom,Cod): E.Hom ⭢ E.Obj \times E.Obj$ is an injective function between finite sets. A function φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y) factors through E/$\sim$ is the same as a certain map of internal equivalence relations in which ℝ gets the equality relation. If we write ℝ${}_{=}$ for the internal equivalence relation on ℝ, then we can think of this as a map in $\texttt{IntEqvRel Set}$. We write [E,ℝ${}_{=}$] for the ℝ-vector space whose elements are functions φ : E.Obj ⭢ ℝ such that x $\sim$ y implies φ(x) = φ(y).
-
-\section{}
-
-
-
-\section{Closed and Internal Equivalence Relations}
-
-\begin{enumerate}[(i)]
-\item Definition of a category
-\item FinSet
-\begin{enumerate}
-\item The category FinSet of finite sets 
-\end{enumerate}
-\item Pro : Cat → Cat (See Johnstone)
-\item Top \iffalse
-\item Definition of a cofiltered diagram
-\item Definition of a cofiltered limit on objects
-\item Definition the category Pro C for a category C
-\item The product of profinite sets is profinite and satisfies the universal property of product in profinite sets.
-\item Definition of a $\texttt{Pro FinSet}$
-\item Definition of a $\texttt{CH}$ the category of compact hausdorff topological spaces, a fully faithful subcategory of topological spaces  \fi
-\item Definition of the category of profinite topological spaces
-\item Definition of a closed equivalence relation on a profinite set
-\item The discrete topological space of a topological space (${}^{dis}$)
-\item The Stone-Čech compactification of a topological space (${}^{cmp}$)
-\end{enumerate}
-
-    
 \begin{definition}
-Consider the functor $(-){}^{d}{}^{s} : \texttt{Top} \rightarrow \texttt{Top}$, which is defined as sending a topological space $X$ to the Stone-Čech compactification of discrete space with $\texttt{X.obj}$ as objects, and similarly on maps. If $\texttt{X}$ is a compactum, then there is a map $\texttt{f : X}$${}^{ds}$$\rightarrow$\texttt{X}$ such that $\texttt{X}$$^{}$ 
+A stone space $X : stonespace$ is a compact, hausdorff, totally disconnected topological space. We can form the category of stone spaces, $Stn : Category stonespace$, which has $stonespace$ as its objects. For the purposes of this exposition, a profinite set is an object in $Pro FinSet$. 
 \end{definition}
 
+\begin{definition}
+We define a function Pro : Cat ⭢ Cat,  where λ(C:Cat)↦Pro Cat, as follows: Pro Cat is a full subcategory of the completion [C,Set]ᵒᵖ whose objects consist of cofiltered limits (pro-limits) of objects in C, and whose maps consist of cofiltered limits (pro-limits) of morphisms in C.
+\end{definition}
 
-{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $Y $x ${}_{X} Y$ forms the morphism component of an internal equivalence relation.\\
+\begin{theorem}
+There is an equivalence between Pro FinSet ≅ Stn and the category of stone spaces.
+\end{theorem}
 
-{\bf theorem:} Let $X$ be a compact hausdorff topological space. There is a continuous map $Y := X{}^{dis}{}^{cmp} \rightarrow X$ given from the universal property of Stone-Čech compactification applied to the map $X^{dis} \rightarrow Y$. $X$ forms the quotient coeq ($\pi_1$, $\pi_2$), where $\pi_1, \pi_2 : Y \times_{X} Y \rightarrow Y$ are the projection maps.\\
-
-
-\begin{enumerate}[(a)]
-\item F and G form a categorical equivalence
-\end{enumerate}
-
-See \href{}{Condensed Mathematics} page 17.\\
+\begin{proof}
+...
+\end{proof}
 
 
 
-\section{Haar Integral on Finite Discrete Groups}
 
+\section{Closed Equivalence Relations}
+
+\begin{definition}
+A topological space with closed equivalence relation is a closed subset $R \subset X \times X$ such that
 \begin{enumerate}
-\item 
+\item For all $x \in R$, $(x, x) \in R$.
+\item For all $x, y \in R$, if $(x, y) \in R$, then $(y, x) \in R$.
+\item For all $x, y, z \in R$, if $(x,y) \in R$ and $(y, z) \in R$ then $(x, z) \in R$.
 \end{enumerate}
+We write $(X,R)$ for such a pair. A map of closed equivalence relations $(X_1,R_1) \rightarrow (X_2,R_2)$ on topological spaces is a continuous map $f : X_1 \rightarrow X_2$ such that $x \sim y$ implies $f(x) \sim f(y)$.
+\end{definition}
 
+\begin{definition}
+We define the category EqStn of closed equivalence relations in Stn using the above.
+\end{definition}
+
+\section{CH ≅ IntEqRel (Pro FinSet)}
+
+This section contains the technical heart of the proof at hand: a demonstration of the categorical equivalence CH ≅ IntEqRel (Pro FinSet). This categorical equivalence is demonstrated in Lectures on Condensed Mathematics on page 17.\\
+
+\begin{definition}
+We define a functor ${}^{dis} : \texttt{Top} \rightarrow \texttt{Set}$ which sends a topological space to its underlying set.
+\end{definition}
+
+\begin{definition}
+We define a functor ${}^{cmp} : \texttt{Set} \rightarrow \texttt{Top}$ which sends a set to its Stone-Čech compactification. The Stone-Čech compactification can be constructed using the set of ultrafilters of a set as the underlying space of a topological space.
+\end{definition}
+
+\begin{theorem}(The Universal Property of Stone-Čech Compactification)
+For each set $X$ (viewed as a discrete topological space), for each compact hausdorff topological space $Y$, and for each continuous function $f : X \rightarrow Y$, there is a unique continuous map $g : X{}^{cmp} \rightarrow Y$ such that $g \circ i = f$.
+\end{theorem}
+
+\begin{definition}
+Let $X$ be a compact hausdorff topological space. The theorem above produces a map $X{}^{dis}{}^{cmp} \rightarrow X$.
+\end{definition}
+
+\begin{definition}
+We define a functor $F : CH \rightarrow EqStn$ which sends a compact hausdorff space $X$ to $(X{}^{dis}{}^{cmp},X{}^{dis}{}^{cmp} \times_{X} X{}^{dis}{}^{cmp})$.
+\end{definition}
+
+\begin{definition}
+We define a functor $G : EqStn \rightarrow CH$ which sends a profinite set with closed equivalence relation to (simply) the quotient by that equivalence relation.
+\end{definition}
+
+\begin{theorem}
+$G \circ F \cong \text{Id}_{CH}$
+\end{theorem}
+
+This occurs as a note on \href{}{Condensed Mathematics} page 17, and it is well known.\\
 
 \section{Haar Integral on Profinite Groups}
 
+This next section details how to construct the Haar integral on a profinite group. We first make a definition:
 
-
-\section{Gelfand Duality}
-
+\begin{definition}
+An internal group in a category $C$ with binary products and terminal object $*$ consists of:
 \begin{enumerate}
-\item Topology on the Cantor set
-\item ℝ in trinary
-\item Urysohn's lemma and trinary
-\item 
+\item An object $G$ in $C$
+\item A map $η : * \rightarrow G$
+\item A map $μ : G × G \rightarrow G$
+\end{enumerate} 
+such that 
+\begin{enumerate}
+\item $η$... (second unit law)
+\item $η$... (associativity)
+\item $μ$... (first unit law)
 \end{enumerate}
+\end{definition}
+
+\begin{definition}
+...
+\end{definition}
+
+We make use of a well known and fascinating lemma concerning how internal groups relate to Pro:
+
+\begin{theorem}
+Grp Pro FinSet ≅ Pro Grp FinSet
+\end{theorem}
+
+This fact is related to another more concrete one, phrased in terms of open subgroups and open subsets of a profinite topological group:
+
+\begin{theorem}
+Let $G$ be a profinite topological group (note that there is no ambiguity in this because of the theorem above). The topology of $G$ is generated by open cosets of open subgroups.
+\end{theorem}
+
+\begin{theorem} (Main Lemma)
+Let $G$ be an internal group in $\texttt{Stn}$. Take $f : G \rightarrow \mathbb{R}$ continuous such that 
+\begin{enumerate}
+\item $\forall (x : G),f(x) \geq 0$
+\item For any open subgroup $N \subset G$, $\forall (x:G)$,inf $\{ f(x) : x \in N \} = 0$
+\end{enumerate}
+Then $f$ is $0$.
+\end{theorem}
+
+\begin{proof}
+Suppose for a contradiction that there is some $x \in G$ such that $f(x) > 0$. Take $\epsilon \in \mathbb{R}$ such that $0 < \epsilon < f(x)$. $U := f^{-1}(\{ y \in \mathbb{R} : f(y) > f(x) - \epsilon \})$ is an open subset of $G$. By the previous theorem, there is an open coset of an open subgroup $H$ containing $x$ and contained in $U$. It follows that inf $\{ f(x) : x \in H \} \geq f(x) - \epsilon > 0 $, a contradiction.
+\end{proof}
+
+\begin{theorem}
+Let $G$ be an internal group in $\texttt{Stn}$. Take $f : G \rightarrow \mathbb{R}$ continuous. Take $\epsilon > 0$. There are (open) cosets of open subgroups $C_1, ...,C_n$ and real numbers $a_1, ..., a_n$ such that 
+\[ \text{sup} \{  \sum_{i = 1}^{n} a_i \chi_{C_i}(x) - f(x) : x \in G \} < \epsilon \]
+\end{theorem}
+
+\begin{proof}
+Using that $G$ is compact, we begin by noting that it is no loss of generality to assume that $f(x) \geq 0$, since we can replace $g(x) = f(x) + \text{inf} \{ f(x) : x \in G \}$. We have $\forall (x \in G),g(x) \geq 0$ and subtract $\text{inf} \{ f(x) : x \in G \}$ afterwards.\\
+
+Let $S$ be the set of strictly positive functionals $f : G \rightarrow \mathbb{R}$ for which the theorem does not apply, and suppose for a contradiction that it is nonempty. Using Zorn's lemma we can show that there is a minimal element of this set $f_0$. It must be the case that $f_0$ meets the assumptions of the main lemma, from which we conclude that $f_0$ is $0$, a contradiction.
+\end{proof}
+
+
+\section{Haar Integral on Compact Hausdorff Groups}
+
+In this section we compile the results in the last section. First consider the functor $F$ established in the above. It follows from what was demonstrated that $F$ is fully faithful. We here demonstrate several small lemmas concerning products in the category of closed equivalence relations in profinite sets:
+
+\begin{theorem}
+Let $(X, R)$ and $(Y, S)$ be objects in the category of closed equivalence relations in profinite sets. $(X \times Y, R \times S)$ satisfies the universal property of categorical product in this category.
+\end{theorem}
+
+\begin{proof}
+...
+\end{proof}
+
+\begin{theorem}
+The functors $F : CH \rightarrow EqRel Stn$ and $EqRel Stn \rightarrow Stn$ preserve products.
+\end{theorem}
+
+\begin{proof}
+...
+\end{proof}
+
+The lemmas above combine to imply the following:
+
+\begin{theorem}
+The (product preserving, fully faithful) functors $F$ and $U$ produce fully faithful functors $Grp F : Grp CH \rightarrow Grp (EqRel Stn)$ and $Grp (EqRel Stn) \rightarrow Grp (Stn)$ 
+\end{theorem}
+
+\begin{theorem}(Main Theorem)
+There is an $\mathbb{R}$-linear function $\int : [G,\mathbb{R}] \rightarrow \mathbb{R}$ such that 
+\[ \int f \circ \mu_g = \int f  \]
+\end{theorem}
+
+\begin{proof}
+Consider such a compact hausdorff topological group $G$. Write $H$ for the profinite topological group arising as $Grp U \circ Grp F$ of $G$. There is a homomorphism of topological groups from $H$ to $G$ (it is the canonical map from the last section).
+\end{proof}
+
+
+
+
 
 \end{document}
 

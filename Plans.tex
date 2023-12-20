@@ -308,141 +308,28 @@
 \ \\
 \ \\
 }
+\title{Research Interests and Objectives}
+\author{E. Dean Young}
 
 \begin{document}
 
-In the document below I state my interests and objectives concerning mathematics in the Lean 4 computer proof assistant. Specifically, I want to develop many of these ideas into PRs (pull requests) for Mathlib 4. Over the next four year period, I would like to complete what I below describe as stages I and II of a plan. 
-
-These plans are detailed in ...
-
-\section{\scalebox{0.6}{Stage I: goals concerning homotopy and stable homotopy}}
-
-Over the course of the next many years, I hope to develop the repositories at $\texttt{github.com/linlib}$, particularly and first of all $\texttt{ThreeWhiteheadTheoremsandThreePuppeSequences}$, into PRs for Mathlib 4. This is an ambitious goal, and it features objects which are of central importance in mathematics. The most significant and mentioned obstacle in this regard is the need for an API (application programming interface). Considerations in the interface associated to a theory of ∞-categories in Lean are especially important given the central role of the material. However, while the proof assistants Agda and Coq have developed extensive libraries for these concepts, the approaches to homotopy in Lean 3 and 4 remain largely personal projects. In addition, there are many desirable features that a PR for these concepts could have. Here are some other considerations:
-
-\begin{enumerate}[(a)]
-\item There are many models for ∞-categories, each of which satisfies the four goals expressed in the repository $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$ for ∞-categories (the first of the twelve mentioned goals). 
-\item It is best to start small, and to get one part correct at a time. Large PRs are hard to check and more prone to error.
-\item Many mathematicans are more interested in CW-complexes and point-set approaches to ∞-groupoids than the full view presented in $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$. It is desirable to have an approach which integrates modern and classical approaches. Further, the approaches which use simplicial sets (see SSet) and point-set topology benefit from being accessible and familiar.
-\item It is important to ensure that code is usable for future projects, especially those which will add important API features.
-\end{enumerate}
-
-\iffalse
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
-\fi
+\maketitle
 
 
-\iffalse
-The concept of a model . 
-e like quite a large API design project.
-\fi
+\begin{center}
+\scalebox{1.3}{\bf Stage 0: (Category Theory)}
+\end{center}
 
-\iffalse
-On the other hand, a more careful inspection of the existing approaches reveals a contrasting problem, namely that... divisiveness has resulted in .
-
-\begin{enumerate}
-\item 
-\end{enumerate}
-\fi
-
-One discussion on the Lean 4 Zulip from 2020 contained a similar observation, in which the prospects of a "plain formalization" are mentioned:
-
-\iffalse
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/quasicategories
-https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Three.20Whitehead.20theorems
-https://leanprover.zulipchat.com/#narrow/stream/335062-homology/topic/Spectral.20sequences
-https://leanprover.zulipchat.com/#narrow/stream/267928-condensed-mathematics/topic/The.20elephant.20in.20the.20room
-https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
-https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Localization.20of.20categories
-https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/How.20to.20get.20HoTT.20people.20into.20Lean
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/With.20Category.20Theory.2C.20Mathematics.20Escapes.20From.20Equality
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Infinity.20Hotel
-https://leanprover.zulipchat.com/#narrow/stream/144837-PR-reviews/topic/.231160.20fundamental.20groupoid
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/condensed.20mathematics
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/condensed.20mathematics
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/With.20Category.20Theory.2C.20Mathematics.20Escapes.20From.20Equality
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/how.20zfc.20works
-https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/How.20to.20get.20HoTT.20people.20into.20Lean
-https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs
-
-Ramkumar Ramachandra
-Joel
-
-\fi
-
-\iffalse
-Needless to say, there are extensive differences between approaches to the study of ∞-categories and ∞-groupoids based in HoTT (homotopy type theory) and what some have called "plain foramlization". Such a plain formalization could make use of ETCC (elementary theory of the category of categories), which would involve defining the following structures along with corresponding results involving replacement for dependent types:
-
-\begin{enumerate}
-\item Category
-\item Functor 
-\item Natural$\_$Transformation
-\item Equation (between natural transformations)
-\end{enumerate}
-\fi
-
-The Lean community is especially suited towards such a `plain formalization' approach. \\
-
-The category of quasicategories and the category of Kan complexes are both essentially determined from the pre-existing material within Mathlib 4. Specifically, we below list those structures involved in the definition of quasicategories and Kan complexes:
-
-\begin{enumerate}
-\item Horns
-\item Simplices
-\item The horn inclusions
-\end{enumerate}
-
-Given the four important considerations (a)-(d) at the outset of the chapter, we would like to consider a pull request based both on the ultimate and far-reaching goals of the first repository. After explaining the content and main features of the pull request, we proceed to explain how we address the important concerns made at the outset.
-
-\begin{enumerate}
-\item 
-\end{enumerate}
-
-API 
-
-
-
-
-\iffalse
-It is also important to explicitly name the category of quasicategories and the category of 
--
--
-\fi
-
-
-The twelve goals in the repository $\texttt{ThreeWhiteheadTheoremsandThreePuppeSequences}$ have allowed for an approach which is motivated by results and which is not particular as to the choice of model. \\
-
-\iffalse
-{\bf Why Model} ...
-\fi
-
-\iffalse
-https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
-\fi
-
-In stage one, we would like to detail twelve major theorems:
-
-\begin{enumerate}
-\item The Whitehead theorem
-\item The Puppe sequence and its exactness
-\item An analogue of the Whitehead theorem for ∞-groupoids featuring an interval object along with two different structures from internal category theory (see Janelidze and Bourceux chapter 7).
-\item An analogue of the Puppe sequence for ∞-groupoids featuring an interval object along with two different structures from internal category theory (see Janelidze and Bourceux chapter 7).
-\end{enumerate}
-
-{\bf STAGE 0 (Category Theory)}
 \begin{enumerate}
 \item Pro : Cat → Cat
 \item Ind : Cat → Cat
 \end{enumerate}
 
+\newpage
+\begin{center}
+\scalebox{1.3}{{\bf Stage I: Homotopy Categories and Exact Sequences}}
+\end{center}
 
-
-{\bf STAGE I (Twenty Four Goals):}
 \begin{enumerate}
 \item (Three Whitehead Theorems and Three Puppe Sequences, 2024)
 \begin{enumerate}
@@ -456,9 +343,11 @@ In stage one, we would like to detail twelve major theorems:
 \end{enumerate}
 \end{enumerate}
 
+\newpage
+\begin{center}
+\scalebox{1.3}{{\bf Stage II: Geometric Maps}}
+\end{center}
 
-
-\section{\scalebox{0.6}{Stage II: Goals concerning geometric maps in topos theory and stable homotopy}}
 
 In $\textit{Foundations for Computable Topology}$, Paul Taylor developed a synthesis of the logic of topological frames, exposing a duality between the topological concepts of local homeomorphism and proper map, and revealing a new condition (overtness and the analogous condition for maps). All topological spaces are overt, but not all locales.\\
 
@@ -474,7 +363,6 @@ This project (Stage II) takes as its main interest the logical patterns of the w
 
 The analogues fall within the scope of topos theory and higher algebra.\\
 
-{\bf STAGE II (TOPOLOGY):}
 \begin{enumerate}
 \item (Topology Project I, 2026)
 \begin{enumerate}
@@ -543,9 +431,6 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 \end{enumerate}
 \end{enumerate}
 
-
-\section{STAGE III: }
-
 \iffalse
 {
 \footnotesize
@@ -564,27 +449,45 @@ The analogues fall within the scope of topos theory and higher algebra.\\
 and Ω⃗∞, ω⃗∞,  Σ⃗∞, σ⃗∞
 and Ω⃡∞, ω⃡∞, Σ⃡∞, σ⃡∞
 and Ω∞, ω∞, Σ∞, σ∞
-
 \fi
 
+\newpage
+\begin{center}
+\scalebox{1.3}{{\bf Stage III: Number Theory}}
+\end{center}
+
+Stages I and II will have completed the plans available at the first four repositories:
 
 \begin{enumerate}
-\item 
+\item ThreeWhiteheadTheoremandThreePuppeSequences
+\item ThreeFreudenthalSuspensionTheoremsandThreeLongExactSequences
+\item GeometricMapsinHigherToposTheory
+\item GeometricMapsinHigherAlgebra
+\end{enumerate}
+
+
+\section{Some Important Objects}
+
+\begin{enumerate}
+\item The completion ℤ̂ of ℤ is a profinite ring
+\item ℤ̂ splits as a product of ℤₚ
+\end{enumerate}
+
+\begin{enumerate}
+\item ℤ̂ ≅ Π ℤₚ is the completion of ℤ
+\item ℤₚ is complete but not self pontrjagin dual
+\item ℚₚ := ℤₚ ⊗ ℚ is self pontrjagin dual 
+\item the characteristic function 𝟙\_ℤₚ is self Fourier dual
 \item Constructing the E∞-ring
 \item Constructing the A∞-ring ℤ
 \item Constructing  ℤ[[x]] ≅ [...Σ∞.obj B.obj B.obj ℤ,ℤ]
 \item Constructing the E-∞ ring ℤ/nℤ
 \item Constructing Spec(ℤ)
-\item [BBℤ,BBℤ] ≅ ℤ
-\item How to get ℤ[[x]] as a cohomology ring.
-\begin{enumerate}
-\item https://math.stackexchange.com/questions/2015228/how-to-show-mathbbcp-infty-mathbbcp-infty-cong-mathbbz
 \end{enumerate}
-\item Chern-Weil Theory and  ℤ[[x₁,...,xₙ]]
-\item How to get ℤ[[x₁,...,xₙ]] as a cohomology ring.
+
+\section{}
+
 \begin{enumerate}
-\item 
-\end{enumerate}
 \item GL₁(ℚₚ)-representations and finite étale extensions of ℚₚ
 \item GLₙ(ℚₚ)-representations and finite étale extensions of ℚₚ((t))
 \item GLₙ(ℚˢᵉᵖ)-representations
@@ -595,22 +498,20 @@ and Ω∞, ω∞, Σ∞, σ∞
 \end{enumerate}
 \item GLₙ(ℚₚ)-representations.
 \item \iffalse https://math.dartmouth.edu/~eassaf/Coloquium_talk_-_p-adic_Langlands \fi
+\item \iffalse https://math.stackexchange.com/questions/4767180/local-fields-vs-self-pontryagin-dual-locally-compact-fields-with-self-dual-schw/4773432?noredirect=1#comment10142552_4773432 \fi
 \item ℚ((x₁,...,xₙ))
 \item We begin the subsection here with the concept of a fixed subobject given an internal action for an object in one of the stable models. We then relate the fixed object to its universal property under certain conditions.
 \item Unitary groups
 \item One giant group which either (a) quotients onto all unitary groups... (b)
-\item ℤ[x₁,...,xₙ] is the derived cohomology ring.
 \item I would like to form U(n) and also a group U(∞), the group of unitary operators on Hilbert space
 \item BU(n) classifies rank n vector bundles
 \item GLₙ(ℂ)?
 \item U(1)ⁿ ⭢ U(n)¹
-\item Volume of U(n)
-\item ∪ U(n)
-\item 
-\item H
+\item How GLₙ and U(n) relate to bundles.
 \item U(∞) := 
 \item The classifying space construction is related to the symmetric group and to the symmetric polynoimals
 \item U(n)
+\item https://math.stackexchange.com/questions/1502405/why-is-the-pontraygin-dual-a-locally-compact-group
 \end{enumerate}
 
 It will not be for many years that the ideas in this section come to fruition and take their place on the computer. The two stages before this are quite extensive.\\
@@ -627,8 +528,18 @@ In this section, we will define the following rings:
 \item 𝔸
 \end{enumerate}
 
-Each of these will be defined first as E∞-rings using the models in the repository of  $\texttt{ThreeStableHomotopyCategoriesandThreeLongExactSequences}$. We will also use the definition of unramified extensions established in the fourth repository,  $\texttt{GeometricMapsinStableHomotopyTheory}$. We then relate these E∞-rings to their corresponding rings via structure preserving bijections.\\
+\section{Chern-Weil Theory}
 
+\begin{enumerate}
+\item [BBℤ,BBℤ] ≅ ℤ
+\item How to get ℤ[[x]] as a cohomology ring.
+\begin{enumerate}
+\item https://math.stackexchange.com/questions/2015228/how-to-show-mathbbcp-infty-mathbbcp-infty-cong-mathbbz
+\item ℤ[[x₁,...,xₙ]]?
+\end{enumerate}
+\end{enumerate}
+
+Each of these will be defined first as E∞-rings using the models in the repository of  $\texttt{ThreeStableHomotopyCategoriesandThreeLongExactSequences}$. We will also use the definition of unramified extensions established in the fourth repository,  $\texttt{GeometricMapsinStableHomotopyTheory}$. We then relate these E∞-rings to their corresponding rings via structure preserving bijections.\\
 
 
 \subsection{Spectral Sequences and Exact Couples}
@@ -802,6 +713,9 @@ Thus, the logarithmic function \(\log(1 - t\Phi)\) can be represented as a sum o
 \end{enumerate}
 
 
+\subsection{Fourier Duality}
+
+
 
 \subsection{Etale Homotopy}
 
@@ -820,8 +734,11 @@ The functors satisfy a condition which ensures that smash product and its two an
 \item How to obtain an ∞-groupoid from a map of E∞-rings
 \end{enumerate}
 
+\subsection{Topological Topoi}
 
-\subsection{Topological E-∞ and A-∞ Rings}
+
+
+\subsection{Topological Stable Homotopy Categories}
 
 In the third and fourth repositories, we took inspiration from the study of topological frames in thinking about `topological topoi', in which the topological frame arising from the frame with two points is replaced with the internal universe ∞$\_$(∞-Cat). The fourth repository details how three different internal universes ∞$\_$(Directoid), ∞$\_$(Spectroid), and ∞$\_$(Spectrum). Each of these constituents of ∞-Cat is involved in a similar logic to the situation for frames, locales, join lattices, and meet lattices. The third and four repositories, titled $\texttt{GeometricMapsinHigherToposTheory}$ and $\texttt{GeometricMapsinHigherAlgebra}$ detail a way to think of `topological'. A∞-rings and E∞-rings in this way.
 
@@ -851,5 +768,108 @@ bohrium — 9/13/23, 5:01 PM
 Ain't this cool?
 This viewpoint nicely incorporates a background E&M field btw: the vector potential affects S.
 ("Potential momentum" instead of "potential energy" so to speak)
+
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
+
+"API"
+https://github.com/leanprover-community/mathlib4/commit/41529d1ea0127608da2bd713e76874e17ed566d5
+https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/Citing.20the.20conceptual.20framework.20of.20Mathlib
+
+I only wish that while you develop your approach, we do not eventually get only an "isolated" theorem but also the relevant API. For example, it seems likely that what you suggest about "jars" is related to some classical results from Gabriel-Zisman Calculus of fractions and homotopy theory about different characterizations of the saturation of horns in the category of simplicial sets (IV.2 Anodyne extensions).
+For the standard model category structure on simplicial sets (the one which is the most useful for homotopy), the fibrations are Kan fibrations, which is a stronger condition than left/right/inner fibrations.
+(Note that in case of homological algebra, I have mostly verified the axioms of model categories in the dual situation: the case of bounded below complexes in a category with enough injectives https://leanprover.zulipchat.com/#narrow/stream/335062-homology/topic/Derived.20functors . I am not completely sure that the exact phrasing of the lemma on projectives you mention is correct though.)
+On the other hand, a more careful inspection of the existing approaches reveals a contrasting problem, namely that... divisiveness has resulted in .
+
+\begin{enumerate}[(a)]
+    \item There are many models for ∞-categories, each of which satisfies the four goals expressed in the repository $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$ for ∞-categories (the first of the twelve mentioned goals). 
+    \item It is best to start small, and to get one part correct at a time. Large PRs are hard to check and more prone to error.
+    \item Many mathematicans are more interested in CW-complexes and point-set approaches to ∞-groupoids than the full view presented in $\texttt{ThreeWhiteheadTheoremandThreePuppeSequences}$. It is desirable to have an approach which integrates modern and classical approaches. Further, the approaches which use simplicial sets (see SSet) and point-set topology benefit from being accessible and familiar.
+    \item It is important to ensure that code is usable for future projects, especially those which will add important API features.
+    \end{enumerate}
+
+
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+
+One discussion on the Lean 4 Zulip from 2020 contained a similar observation, in which the prospects of a "plain formalization" are mentioned:
+
+
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/quasicategories
+https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Three.20Whitehead.20theorems
+https://leanprover.zulipchat.com/#narrow/stream/335062-homology/topic/Spectral.20sequences
+https://leanprover.zulipchat.com/#narrow/stream/267928-condensed-mathematics/topic/The.20elephant.20in.20the.20room
+https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
+https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/New.20member
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Localization.20of.20categories
+https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/How.20to.20get.20HoTT.20people.20into.20Lean
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/seminars
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Lean.20vs.20Coq
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/With.20Category.20Theory.2C.20Mathematics.20Escapes.20From.20Equality
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Infinity.20Hotel
+https://leanprover.zulipchat.com/#narrow/stream/144837-PR-reviews/topic/.231160.20fundamental.20groupoid
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/condensed.20mathematics
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/condensed.20mathematics
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/With.20Category.20Theory.2C.20Mathematics.20Escapes.20From.20Equality
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/how.20zfc.20works
+https://leanprover.zulipchat.com/#narrow/stream/236446-Type-theory/topic/How.20to.20get.20HoTT.20people.20into.20Lean
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Intuitionistic.20Type.20Theory.20Proofs
+
+Ramkumar Ramachandra
+Joel
+
+Needless to say, there are extensive differences between approaches to the study of ∞-categories and ∞-groupoids based in HoTT (homotopy type theory) and what some have called "plain foramlization". Such a plain formalization could make use of ETCC (elementary theory of the category of categories), which would involve defining the following structures along with corresponding results involving replacement for dependent types:
+
+\begin{enumerate}
+\item Category
+\item Functor 
+\item Natural$\_$Transformation
+\item Equation (between natural transformations)
+\end{enumerate}
+
+The Lean community is especially suited towards such a `plain formalization' approach. \\
+
+The category of quasicategories and the category of Kan complexes are both essentially determined from the pre-existing material within Mathlib 4. Specifically, we below list those structures involved in the definition of quasicategories and Kan complexes:
+
+\begin{enumerate}
+\item Horns
+\item Simplices
+\item The horn inclusions
+\end{enumerate}
+
+Given the four important considerations (a)-(d) at the outset of the chapter, we would like to consider a pull request based both on the ultimate and far-reaching goals of the first repository. After explaining the content and main features of the pull request, we proceed to explain how we address the important concerns made at the outset.
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+API 
+
+It is also important to explicitly name the category of quasicategories and the category of 
+-
+-
+The twelve goals in the repository $\texttt{ThreeWhiteheadTheoremsandThreePuppeSequences}$ have allowed for an approach which is motivated by results and which is not particular as to the choice of model. \\
+
+{\bf Why Model} ...
+
+https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/2-categories
+
+In stage one, we would like to detail twelve major theorems:
+
+\begin{enumerate}
+\item The Whitehead theorem
+\item The Puppe sequence and its exactness
+\item An analogue of the Whitehead theorem for ∞-groupoids featuring an interval object along with two different structures from internal category theory (see Janelidze and Bourceux chapter 7).
+\item An analogue of the Puppe sequence for ∞-groupoids featuring an interval object along with two different structures from internal category theory (see Janelidze and Bourceux chapter 7).
+\end{enumerate}
+
+
+Prof. Carlo Angiuli
 \fi
 \end{document}
