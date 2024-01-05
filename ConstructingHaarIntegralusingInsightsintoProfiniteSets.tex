@@ -89,22 +89,24 @@ A goal for further into the future is to make a PR for Mathlib 4 constructing Ha
 \section{Stone Spaces}
 
 \begin{definition}
-A stone space $X : stonespace$ is a compact, hausdorff, totally disconnected topological space. We can form the category of stone spaces, $Stn : Category stonespace$, which has $stonespace$ as its objects. For the purposes of this exposition, a profinite set is an object in $Pro FinSet$. 
+A stone space $X : stonespace$ is a compact, hausdorff, totally disconnected topological space. We can form the category of stone spaces, $Stn : Category stonespace$, which has $stonespace$ as its objects.
 \end{definition}
 
 \begin{definition}
-We define a function Pro : Cat ⭢ Cat,  where λ(C:Cat)↦Pro Cat, as follows: Pro Cat is a full subcategory of the completion [C,Set]ᵒᵖ whose objects consist of cofiltered limits (pro-limits) of objects in C, and whose maps consist of cofiltered limits (pro-limits) of morphisms in C.
+We define a function Pro : Cat ⭢ Cat,  where λ(C:Cat)↦Pro Cat, as follows: Pro Cat is a full subcategory of the completion [C,Set]ᵒᵖ whose objects consist of cofiltered limits (pro-limits) of objects in C, and whose maps consist of cofiltered limits (pro-limits) of morphisms in C. This will be established in more detail in the repository of ${TheStrictTwocategoryofCategories}$.
 \end{definition}
+
+\begin{definition}
+We define a function Ind : Cat ⭢ Cat, where λ(C : Cat)↦Ind Cat, as follows: Ind Cat is a full subcategory of the cocompletion [Cᵒᵖ,Set] whose objects consist of filtered colimits (ind-limits) of objects in C, and whose maps consist of filtered colimits (ind-limits) of morphisms in C. This will be established in more detail in the repository of ${TheStrictTwocategoryofCategories}$.
+\end{definition}
+
+For the purposes of this exposition, a profinite set is an object in $Pro FinSet$. The main theorem which we will use is the following:
 
 \begin{theorem}
 There is an equivalence between Pro FinSet ≅ Stn and the category of stone spaces.
 \end{theorem}
 
-\begin{proof}
-...
-\end{proof}
-
-
+This can be found in Johnstone $\textit{Stone Spaces}$, 236.\\
 
 
 \section{Closed Equivalence Relations}
@@ -137,14 +139,18 @@ We define a functor ${}^{cmp} : \texttt{Set} \rightarrow \texttt{Top}$ which sen
 
 \begin{theorem}(The Universal Property of Stone-Čech Compactification)
 For each set $X$ (viewed as a discrete topological space), for each compact hausdorff topological space $Y$, and for each continuous function $f : X \rightarrow Y$, there is a unique continuous map $g : X{}^{cmp} \rightarrow Y$ such that $g \circ i = f$.
-\end{theorem}
+\end{theorem} 
+
+\begin{proof}
+Johnstone, $\textit{Stone Spaces}$, 130.
+\end{proof}
 
 \begin{definition}
 Let $X$ be a compact hausdorff topological space. The theorem above produces a map $X{}^{dis}{}^{cmp} \rightarrow X$.
 \end{definition}
 
 \begin{definition}
-We define a functor $F : CH \rightarrow EqStn$ which sends a compact hausdorff space $X$ to $(X{}^{dis}{}^{cmp},X{}^{dis}{}^{cmp} \times_{X} X{}^{dis}{}^{cmp})$.
+We define a functor $F : CH \rightarrow EqStn$ which sends a compact hausdorff space $X$ to $(X{}^{dis}{}^{cmp},X{}^{dis}{}^{cmp} \times_{X} X{}^{dis}{}^{cmp})$, and whose morphism component sends a continuous map $f : X \rightarrow Y$ of topological spaces to $(f{}^{dis}{}^{cmp},f{}^{dis}{}^{cmp} \times_{X} f{}^{dis}{}^{cmp})$.
 \end{definition}
 
 \begin{definition}
@@ -155,7 +161,9 @@ We define a functor $G : EqStn \rightarrow CH$ which sends a profinite set with 
 $G \circ F \cong \text{Id}_{CH}$
 \end{theorem}
 
-This occurs as a note on \href{}{Condensed Mathematics} page 17, and it is well known.\\
+This occurs as a note in \href{}{Condensed Mathematics} on page 17.\\
+
+
 
 \section{Haar Integral on Profinite Groups}
 
@@ -170,21 +178,21 @@ An internal group in a category $C$ with binary products and terminal object $*$
 \end{enumerate} 
 such that 
 \begin{enumerate}
-\item $η$... (second unit law)
-\item $η$... (associativity)
-\item $μ$... (first unit law)
+ \item $μ \circ (\eta \times 1) = 1$ (first unit law)
+\item $μ \circ (1 \times \eta) = 1$ (second unit law)
+\item $μ \circ (μ \times 1) = μ \circ (1 \times μ)$ (associativity)
 \end{enumerate}
 \end{definition}
 
-\begin{definition}
-...
-\end{definition}
-
-We make use of a well known and fascinating lemma concerning how internal groups relate to Pro:
+We make use of a well known and fascinating theorem concerning how internal groups relate to Pro:
 
 \begin{theorem}
 Grp Pro FinSet ≅ Pro Grp FinSet
 \end{theorem}
+
+\begin{proof}
+Available $\textit{https://en.wikipedia.org/wiki/Profinite_group}{here}$
+\end{proof}
 
 This fact is related to another more concrete one, phrased in terms of open subgroups and open subsets of a profinite topological group:
 
